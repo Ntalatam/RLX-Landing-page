@@ -1,15 +1,17 @@
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+import Technology from "@/components/Technology";
 import Footer from "@/components/Footer";
 
-const Index = () => {
+const TechnologyPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <Hero />
+      <div className="pt-20">
+        <Technology />
+      </div>
       <Footer />
     </div>
   );
 };
 
-export default Index;
+export default TechnologyPage;

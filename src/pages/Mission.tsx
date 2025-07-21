@@ -1,15 +1,17 @@
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+import Mission from "@/components/Mission";
 import Footer from "@/components/Footer";
 
-const Index = () => {
+const MissionPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <Hero />
+      <div className="pt-20">
+        <Mission />
+      </div>
       <Footer />
     </div>
   );
 };
 
-export default Index;
+export default MissionPage;
