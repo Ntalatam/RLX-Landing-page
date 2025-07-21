@@ -21,7 +21,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Location",
-      details: "Austin, TX",
+      details: "Washington, D.C.",
       subtitle: "Supply chain intelligence headquarters"
     }
   ];
