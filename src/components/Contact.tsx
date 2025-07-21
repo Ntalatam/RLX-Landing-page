@@ -9,20 +9,20 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      details: "contact@redlaunchsystems.com",
-      subtitle: "Get in touch with our team"
+      details: "contact@redlaunchtech.com",
+      subtitle: "Get in touch with our supply chain experts"
     },
     {
       icon: Phone,
       title: "Phone",
       details: "+1 (555) 123-4567",
-      subtitle: "Available 24/7 for urgent inquiries"
+      subtitle: "Available for consultations and demos"
     },
     {
       icon: MapPin,
       title: "Location",
-      details: "Cape Canaveral, FL",
-      subtitle: "Launch operations center"
+      details: "Austin, TX",
+      subtitle: "Supply chain intelligence headquarters"
     }
   ];
 
@@ -34,8 +34,8 @@ const Contact = () => {
             Get In Touch
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to launch your mission? Contact our team to discuss your 
-            space access requirements and learn how we can support your goals.
+            Ready to transform your supply chain risk management? Contact our team to discuss your 
+            requirements and learn how we can help build more resilient operations.
           </p>
         </div>
 
@@ -47,9 +47,9 @@ const Contact = () => {
                 Let's Start a Conversation
               </h3>
               <p className="text-muted-foreground mb-8">
-                Whether you're planning a satellite deployment, deep space mission, 
-                or need custom launch solutions, our team is here to help make your 
-                vision a reality.
+                Whether you're looking to enhance supplier visibility, mitigate supply chain risks, 
+                or implement comprehensive risk management solutions, our team is here to help 
+                transform your operations.
               </p>
             </div>
 
@@ -111,9 +111,9 @@ const Contact = () => {
               
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">
-                  Project Type
+                  Industry
                 </label>
-                <Input placeholder="Satellite deployment, deep space mission, etc." />
+                <Input placeholder="Aerospace, Defense, Manufacturing, Energy, etc." />
               </div>
               
               <div>
@@ -121,7 +121,7 @@ const Contact = () => {
                   Message
                 </label>
                 <Textarea 
-                  placeholder="Tell us about your mission requirements..."
+                  placeholder="Tell us about your supply chain challenges and risk management needs..."
                   className="min-h-[120px]"
                 />
               </div>

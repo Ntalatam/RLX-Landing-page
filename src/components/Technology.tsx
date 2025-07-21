@@ -1,32 +1,32 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Cpu, Settings, Rocket, Satellite } from "lucide-react";
+import { BarChart3, MapPin, Network, AlertTriangle } from "lucide-react";
 
 const Technology = () => {
   const technologies = [
     {
-      icon: Rocket,
-      title: "Propulsion Systems",
-      description: "Advanced rocket engines with reusable technology for cost-effective launches.",
-      features: ["Reusable boosters", "Advanced guidance", "Optimal fuel efficiency"]
+      icon: AlertTriangle,
+      title: "Supplier Risk Assessment",
+      description: "Real-time risk scoring and monitoring across your entire supplier ecosystem.",
+      features: ["Live risk scoring", "Compliance alignment", "Audit trails"]
     },
     {
-      icon: Cpu,
-      title: "Flight Control Systems",
-      description: "AI-powered flight control with autonomous operation capabilities.",
-      features: ["Real-time navigation", "Autonomous systems", "Predictive analytics"]
+      icon: MapPin,
+      title: "Geographical Tracker",
+      description: "Visual mapping of supplier locations with overlay of geopolitical and natural hazards.",
+      features: ["Interactive maps", "Risk overlays", "Zone clustering"]
     },
     {
-      icon: Settings,
-      title: "Manufacturing",
-      description: "Next-generation manufacturing processes for rapid production.",
-      features: ["3D printing technology", "Quality assurance", "Scalable production"]
+      icon: Network,
+      title: "Supply Chain Intelligence",
+      description: "End-to-end visualization of supply chain flows and risk propagation.",
+      features: ["Flow diagrams", "Bottleneck analysis", "Real-time collaboration"]
     },
     {
-      icon: Satellite,
-      title: "Payload Integration",
-      description: "Flexible payload systems for diverse mission requirements.",
-      features: ["Custom configurations", "Multi-payload support", "Secure deployment"]
+      icon: BarChart3,
+      title: "Risk Analytics",
+      description: "Advanced analytics and predictive modeling for proactive risk management.",
+      features: ["Predictive insights", "Trend analysis", "Custom dashboards"]
     }
   ];
 
@@ -35,11 +35,11 @@ const Technology = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Advanced Technology
+            Platform Solutions
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Our integrated technology stack powers reliable, efficient, and 
-            scalable launch operations for the modern space economy.
+            Our integrated platform combines real-time data analytics, geospatial intelligence, 
+            and interactive visualizations to deliver comprehensive supply chain risk management.
           </p>
         </div>
 
@@ -77,47 +77,47 @@ const Technology = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-3xl font-bold text-foreground mb-4">
-                RedLaunch OS
+                Red Launch Platform
               </h3>
               <p className="text-lg text-muted-foreground mb-6">
-                Our proprietary operating system integrates all launch operations, 
-                from pre-flight checks to payload deployment. Built for reliability, 
-                scalability, and autonomous operation.
+                Our unified platform consolidates supplier data, maps risk flows, and provides 
+                real-time visibility through an intuitive dashboard. Built for security, 
+                scalability, and mission-critical reliability.
               </p>
               <ul className="space-y-2 mb-6">
                 <li className="flex items-center text-muted-foreground">
                   <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
-                  Real-time telemetry and monitoring
+                  Real-time risk monitoring and alerts
                 </li>
                 <li className="flex items-center text-muted-foreground">
                   <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
-                  Automated flight control systems
+                  Automated threat detection and scoring
                 </li>
                 <li className="flex items-center text-muted-foreground">
                   <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
-                  Integrated mission planning
+                  Integrated collaboration and communication
                 </li>
               </ul>
               <Button>
-                Learn More About RedLaunch OS
+                Request Platform Demo
               </Button>
             </div>
             <div className="relative">
               <div className="bg-background/20 rounded-xl p-6 border border-border/50">
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span className="text-sm text-muted-foreground">Systems Online</span>
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                      <span className="text-sm text-muted-foreground">Risk Monitoring Active</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-primary rounded-full"></div>
+                      <span className="text-sm text-muted-foreground">Data Streams Connected</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                      <span className="text-sm text-muted-foreground">Intelligence Updated</span>
+                    </div>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <span className="text-sm text-muted-foreground">Flight Ready</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span className="text-sm text-muted-foreground">Telemetry Active</span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

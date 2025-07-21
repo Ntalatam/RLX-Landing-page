@@ -1,23 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Target, Shield, Zap } from "lucide-react";
+import { Target, Shield, Eye } from "lucide-react";
 
 const Mission = () => {
   const values = [
     {
       icon: Target,
-      title: "Precision Engineering",
-      description: "Every component is designed with exacting standards for mission-critical reliability."
+      title: "Precision Intelligence",
+      description: "Every data point is analyzed with precision to deliver actionable risk insights for critical decisions."
     },
     {
       icon: Shield,
-      title: "Proven Reliability",
-      description: "Trusted by space agencies and private companies for the most demanding missions."
+      title: "Proactive Protection",
+      description: "Trusted by leading manufacturers and defense contractors to safeguard their most critical supply chains."
     },
     {
-      icon: Zap,
-      title: "Innovation First",
-      description: "Pushing the boundaries of what's possible in launch technology and space access."
+      icon: Eye,
+      title: "Visibility First",
+      description: "Transforming complex supply chain data into clear, actionable intelligence that drives better outcomes."
     }
   ];
 
@@ -29,8 +29,8 @@ const Mission = () => {
             Our Mission
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Transforming space access with advanced launch systems that enable 
-            the next generation of space exploration and commercial missions.
+            Empowering organizations with supply chain intelligence that transforms risk into 
+            strategic foresight, enabling confident decision-making in an increasingly complex global economy.
           </p>
         </div>
 
@@ -38,20 +38,20 @@ const Mission = () => {
           {/* Mission Statement */}
           <div className="space-y-6">
             <h3 className="text-3xl font-bold text-foreground">
-              Enabling Tomorrow's Space Economy
+              Building Resilient Supply Chains
             </h3>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              The space industry has evolved at unprecedented speed. To stay ahead, 
-              RedLaunch Systems puts innovation ahead of convention and builds 
-              technology to bring humanity quantum leaps forward in space capability.
+              As supply chains become increasingly global and complex, Red Launch Technologies 
+              simplifies the chaos by turning risk into strategic foresight. We combine real-time 
+              data analytics, geospatial mapping, and interactive visualizations to empower decision-makers.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Our launch systems are engineered for reliability, efficiency, and 
-              scalability to support everything from satellite deployments to 
-              deep space missions.
+              Our platform serves procurement teams, compliance officers, and supply chain executives 
+              across aerospace, defense, manufacturing, and energy sectors—industries that demand 
+              precision, security, and adaptability.
             </p>
             <Button className="mt-6">
-              Learn More About Our Mission
+              Learn More About Our Platform
             </Button>
           </div>
 
