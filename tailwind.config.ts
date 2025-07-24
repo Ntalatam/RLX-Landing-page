@@ -61,15 +61,7 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				},
-				'brand-red': {
-					DEFAULT: 'hsl(var(--brand-red))',
-					foreground: 'hsl(var(--brand-red-foreground))'
 				}
-			},
-			fontFamily: {
-				'serif': ['IBM Plex Serif', 'serif'],
-				'sans': ['Inter', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
