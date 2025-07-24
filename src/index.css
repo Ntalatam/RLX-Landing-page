@@ -33,6 +33,10 @@ All colors MUST be HSL.
     --destructive: 0 84% 60%;
     --destructive-foreground: 42 34% 78%;
 
+    /* Red Launch branded red for CTAs */
+    --brand-red: 0 70% 50%;
+    --brand-red-foreground: 0 0% 100%;
+
     --border: 200 14% 20%;
     --input: 200 14% 20%;
     --ring: 42 34% 78%;
@@ -81,6 +85,10 @@ All colors MUST be HSL.
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 42 34% 78%;
+
+    /* Red Launch branded red for CTAs */
+    --brand-red: 0 70% 50%;
+    --brand-red-foreground: 0 0% 100%;
 
     --border: 200 14% 20%;
     --input: 200 14% 20%;
