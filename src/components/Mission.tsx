@@ -50,7 +50,7 @@ const Mission = () => {
               across aerospace, defense, manufacturing, and energy sectors—industries that demand 
               precision, security, and adaptability.
             </p>
-            <Button className="mt-6">
+            <Button className="mt-6 bg-primary text-primary-foreground hover:bg-primary/90 neon-glow">
               Learn More About Our Platform
             </Button>
           </div>
@@ -58,9 +58,9 @@ const Mission = () => {
           {/* Values Grid */}
           <div className="space-y-6">
             {values.map((value, index) => (
-              <Card key={index} className="p-6 bg-background/50 backdrop-blur-sm border-border hover:bg-background/70 transition-all duration-300">
+              <Card key={index} className="p-6 bg-card/80 backdrop-blur-sm border border-border hover:bg-card/90 transition-all duration-300 hover:neon-glow">
                 <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+                  <div className="flex-shrink-0 w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/30 transition-colors duration-300">
                     <value.icon className="w-6 h-6 text-primary" />
                   </div>
                   <div>

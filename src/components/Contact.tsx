@@ -55,16 +55,16 @@ const Contact = () => {
 
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
-                <Card key={index} className="p-6 bg-background/50 backdrop-blur-sm border-border">
+                <Card key={index} className="p-6 bg-card/80 backdrop-blur-sm border border-border hover:neon-glow transition-all duration-300">
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/30 transition-colors duration-300">
                       <info.icon className="w-6 h-6 text-primary" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-foreground mb-1">
                         {info.title}
                       </h4>
-                      <p className="text-primary font-medium mb-1">
+                      <p className="text-primary font-medium mb-1 neon-text">
                         {info.details}
                       </p>
                       <p className="text-sm text-muted-foreground">
@@ -78,20 +78,20 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <Card className="p-8 bg-background/50 backdrop-blur-sm border-border">
+          <Card className="p-8 bg-card/80 backdrop-blur-sm border border-border">
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
                     First Name
                   </label>
-                  <Input placeholder="John" />
+                  <Input placeholder="John" className="bg-background border-border focus:border-primary focus:ring-primary" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
                     Last Name
                   </label>
-                  <Input placeholder="Doe" />
+                  <Input placeholder="Doe" className="bg-background border-border focus:border-primary focus:ring-primary" />
                 </div>
               </div>
               
@@ -99,21 +99,21 @@ const Contact = () => {
                 <label className="block text-sm font-medium text-foreground mb-2">
                   Email
                 </label>
-                <Input type="email" placeholder="john@company.com" />
+                <Input type="email" placeholder="john@company.com" className="bg-background border-border focus:border-primary focus:ring-primary" />
               </div>
               
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">
                   Company
                 </label>
-                <Input placeholder="Your Company" />
+                <Input placeholder="Your Company" className="bg-background border-border focus:border-primary focus:ring-primary" />
               </div>
               
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">
                   Industry
                 </label>
-                <Input placeholder="Aerospace, Defense, Manufacturing, Energy, etc." />
+                <Input placeholder="Aerospace, Defense, Manufacturing, Energy, etc." className="bg-background border-border focus:border-primary focus:ring-primary" />
               </div>
               
               <div>
@@ -122,11 +122,11 @@ const Contact = () => {
                 </label>
                 <Textarea 
                   placeholder="Tell us about your supply chain challenges and risk management needs..."
-                  className="min-h-[120px]"
+                  className="min-h-[120px] bg-background border-border focus:border-primary focus:ring-primary"
                 />
               </div>
               
-              <Button type="submit" className="w-full group">
+              <Button type="submit" className="w-full group bg-primary text-primary-foreground hover:bg-primary/90 neon-glow">
                 Send Message
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>

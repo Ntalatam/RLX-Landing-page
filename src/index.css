@@ -6,93 +6,92 @@
 All colors MUST be HSL.
 */
 
+/* Smooth scrolling for anchor navigation */
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   :root {
-    /* RedLaunch Color Palette - Inspired by uploaded image */
-    --background: 210 11% 5%; /* night */
-    --foreground: 42 34% 78%; /* ecru */
+    /* RedLaunch Color Palette - Defense Tech Black & Neon Red */
+    --background: 0 0% 4%; /* true black #0A0A0A */
+    --foreground: 0 0% 100%; /* white #FFFFFF */
 
-    --card: 200 14% 25%; /* charcoal */
-    --card-foreground: 42 34% 78%; /* ecru */
+    --card: 0 0% 12%; /* dark gray #1F1F1F */
+    --card-foreground: 0 0% 100%; /* white #FFFFFF */
 
-    --popover: 200 14% 25%; /* charcoal */
-    --popover-foreground: 42 34% 78%; /* ecru */
+    --popover: 0 0% 12%; /* dark gray #1F1F1F */
+    --popover-foreground: 0 0% 100%; /* white #FFFFFF */
 
-    --primary: 42 34% 78%; /* ecru */
-    --primary-foreground: 210 11% 5%; /* night */
+    --primary: 0 100% 60%; /* neon red #FF0033 */
+    --primary-foreground: 0 0% 100%; /* white #FFFFFF */
 
-    --secondary: 200 14% 25%; /* charcoal */
-    --secondary-foreground: 42 34% 78%; /* ecru */
+    --secondary: 0 0% 12%; /* dark gray #1F1F1F */
+    --secondary-foreground: 0 0% 100%; /* white #FFFFFF */
 
-    --muted: 200 14% 20%;
-    --muted-foreground: 42 20% 60%;
+    --muted: 0 0% 12%; /* dark gray #1F1F1F */
+    --muted-foreground: 204 0% 80%; /* light gray #CCCCCC */
 
-    --accent: 42 34% 78%; /* ecru */
-    --accent-foreground: 210 11% 5%; /* night */
+    --accent: 0 100% 65%; /* accent red #FF1A4B */
+    --accent-foreground: 0 0% 100%; /* white #FFFFFF */
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 42 34% 78%;
+    --destructive: 0 100% 60%; /* neon red #FF0033 */
+    --destructive-foreground: 0 0% 100%; /* white #FFFFFF */
 
-    --border: 200 14% 20%;
-    --input: 200 14% 20%;
-    --ring: 42 34% 78%;
+    --border: 0 0% 12%; /* dark gray #1F1F1F */
+    --input: 0 0% 12%; /* dark gray #1F1F1F */
+    --ring: 0 100% 60%; /* neon red #FF0033 */
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 0 0% 4%; /* true black #0A0A0A */
+    --sidebar-foreground: 0 0% 100%; /* white #FFFFFF */
+    --sidebar-primary: 0 100% 60%; /* neon red #FF0033 */
+    --sidebar-primary-foreground: 0 0% 100%; /* white #FFFFFF */
+    --sidebar-accent: 0 0% 12%; /* dark gray #1F1F1F */
+    --sidebar-accent-foreground: 0 0% 100%; /* white #FFFFFF */
+    --sidebar-border: 0 0% 12%; /* dark gray #1F1F1F */
+    --sidebar-ring: 0 100% 60%; /* neon red #FF0033 */
   }
 
   .dark {
     /* Same colors for dark mode consistency */
-    --background: 210 11% 5%; /* night */
-    --foreground: 42 34% 78%; /* ecru */
+    --background: 0 0% 4%; /* true black #0A0A0A */
+    --foreground: 0 0% 100%; /* white #FFFFFF */
 
-    --card: 200 14% 25%; /* charcoal */
-    --card-foreground: 42 34% 78%; /* ecru */
+    --card: 0 0% 12%; /* dark gray #1F1F1F */
+    --card-foreground: 0 0% 100%; /* white #FFFFFF */
 
-    --popover: 200 14% 25%; /* charcoal */
-    --popover-foreground: 42 34% 78%; /* ecru */
+    --popover: 0 0% 12%; /* dark gray #1F1F1F */
+    --popover-foreground: 0 0% 100%; /* white #FFFFFF */
 
-    --primary: 42 34% 78%; /* ecru */
-    --primary-foreground: 210 11% 5%; /* night */
+    --primary: 0 100% 60%; /* neon red #FF0033 */
+    --primary-foreground: 0 0% 100%; /* white #FFFFFF */
 
-    --secondary: 200 14% 25%; /* charcoal */
-    --secondary-foreground: 42 34% 78%; /* ecru */
+    --secondary: 0 0% 12%; /* dark gray #1F1F1F */
+    --secondary-foreground: 0 0% 100%; /* white #FFFFFF */
 
-    --muted: 200 14% 20%;
-    --muted-foreground: 42 20% 60%;
+    --muted: 0 0% 12%; /* dark gray #1F1F1F */
+    --muted-foreground: 204 0% 80%; /* light gray #CCCCCC */
 
-    --accent: 42 34% 78%; /* ecru */
-    --accent-foreground: 210 11% 5%; /* night */
+    --accent: 0 100% 65%; /* accent red #FF1A4B */
+    --accent-foreground: 0 0% 100%; /* white #FFFFFF */
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 42 34% 78%;
+    --destructive: 0 100% 60%; /* neon red #FF0033 */
+    --destructive-foreground: 0 0% 100%; /* white #FFFFFF */
 
-    --border: 200 14% 20%;
-    --input: 200 14% 20%;
-    --ring: 42 34% 78%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 0 0% 12%; /* dark gray #1F1F1F */
+    --input: 0 0% 12%; /* dark gray #1F1F1F */
+    --ring: 0 100% 60%; /* neon red #FF0033 */
+    
+    --sidebar-background: 0 0% 4%; /* true black #0A0A0A */
+    --sidebar-foreground: 0 0% 100%; /* white #FFFFFF */
+    --sidebar-primary: 0 100% 60%; /* neon red #FF0033 */
+    --sidebar-primary-foreground: 0 0% 100%; /* white #FFFFFF */
+    --sidebar-accent: 0 0% 12%; /* dark gray #1F1F1F */
+    --sidebar-accent-foreground: 0 0% 100%; /* white #FFFFFF */
+    --sidebar-border: 0 0% 12%; /* dark gray #1F1F1F */
+    --sidebar-ring: 0 100% 60%; /* neon red #FF0033 */
   }
 }
 
@@ -112,13 +111,22 @@ All colors MUST be HSL.
   
   .tech-grid {
     background-image: 
-      linear-gradient(rgba(201, 184, 133, 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(201, 184, 133, 0.1) 1px, transparent 1px);
+      linear-gradient(rgba(255, 0, 51, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 0, 51, 0.1) 1px, transparent 1px);
     background-size: 50px 50px;
   }
   
   .glow-effect {
-    box-shadow: 0 0 20px rgba(201, 184, 133, 0.3);
+    box-shadow: 0 0 20px rgba(255, 0, 51, 0.4);
+  }
+  
+  /* Neon red glow effects */
+  .neon-glow {
+    box-shadow: 0 0 10px rgba(255, 0, 51, 0.5), 0 0 20px rgba(255, 0, 51, 0.3), 0 0 30px rgba(255, 0, 51, 0.1);
+  }
+  
+  .neon-text {
+    text-shadow: 0 0 10px rgba(255, 0, 51, 0.8), 0 0 20px rgba(255, 0, 51, 0.4);
   }
 }
 

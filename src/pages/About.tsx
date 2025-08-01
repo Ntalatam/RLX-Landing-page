@@ -67,8 +67,8 @@ const About = () => {
 
               <div className="grid grid-cols-2 gap-6">
                 {values.map((value, index) => (
-                  <Card key={index} className="p-6 bg-card/50 backdrop-blur-sm border-border text-center">
-                    <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <Card key={index} className="p-6 bg-card/80 backdrop-blur-sm border border-border text-center hover:neon-glow transition-all duration-300">
+                    <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/30 transition-colors duration-300">
                       <value.icon className="w-6 h-6 text-primary" />
                     </div>
                     <h3 className="text-lg font-semibold text-foreground mb-2">
@@ -82,7 +82,7 @@ const About = () => {
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-card/50 to-muted/30 rounded-2xl p-8 md:p-12 border border-border">
+            <div className="bg-card/80 rounded-2xl p-8 md:p-12 border border-border neon-glow">
               <div className="text-center">
                 <h2 className="text-3xl font-bold text-foreground mb-6">
                   Our Vision
