@@ -2,30 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const Contact = () => {
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: "Email",
-      details: "contact@redlaunchtech.com",
-      subtitle: "Get in touch with our supply chain experts"
-    },
-    {
-      icon: Phone,
-      title: "Phone",
-      details: "+1 (555) 123-4567",
-      subtitle: "Available for consultations and demos"
-    },
-    {
-      icon: MapPin,
-      title: "Location",
-      details: "Washington, D.C.",
-      subtitle: "Supply chain intelligence headquarters"
-    }
-  ];
-
   return (
     <section id="contact" className="py-24 bg-card/30">
       <div className="container mx-auto px-6">
@@ -39,44 +18,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-bold text-foreground mb-6">
-                Let's Start a Conversation
-              </h3>
-              <p className="text-muted-foreground mb-8">
-                Whether you're looking to enhance supplier visibility, mitigate supply chain risks, 
-                or implement comprehensive risk management solutions, our team is here to help 
-                transform your operations.
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              {contactInfo.map((info, index) => (
-                <Card key={index} className="p-6 bg-card/80 backdrop-blur-sm border border-border hover:neon-glow transition-all duration-300">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/30 transition-colors duration-300">
-                      <info.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-1">
-                        {info.title}
-                      </h4>
-                      <p className="text-primary font-medium mb-1 neon-text">
-                        {info.details}
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        {info.subtitle}
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </div>
-
+        <div className="max-w-2xl mx-auto">
           {/* Contact Form */}
           <Card className="p-8 bg-card/80 backdrop-blur-sm border border-border">
             <form className="space-y-6">

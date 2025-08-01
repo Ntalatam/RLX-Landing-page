@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, ChevronDown } from "lucide-react";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -13,39 +13,21 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // Track which dropdown is open
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const navigate = useNavigate();
 
   const navItems = [
-    { label: "Products", href: "/products" },
+    { label: "Product", href: "/products" },
     { label: "Company", href: "/company" },
     { label: "Media", href: "/media" },
   ];
 
-  // Function to handle smooth scrolling to sections
-  const scrollToSection = (sectionId: string) => {
-    // First navigate to the products page
-    navigate('/products');
-    
-    // Then scroll to the section after a short delay to ensure the page has loaded
-    setTimeout(() => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    }, 100);
-  };
-
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="w-full py-6">
-        <div className="flex items-center justify-between px-4 md:px-20">
+        <div className="flex items-center justify-between px-2 md:px-8">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <img src="/redlaunch-logo.png" alt="RedLaunch Logo" className="w-16 h-16 rounded-sm object-cover group-hover:neon-glow transition-all duration-300" />
-            <span className="text-2xl font-extrabold text-foreground group-hover:text-primary transition-colors duration-300">RedLaunch Technologies</span>
+          <Link to="/" className="flex items-center space-x-2 group">
+            <img src="/images/rlx-logo.png" alt="RedLaunch Logo" className="w-16 h-16 object-contain group-hover:neon-glow transition-all duration-300" />
+            <span className="text-2xl font-extrabold text-foreground group-hover:text-primary transition-colors duration-300">Red Launch Technologies</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -53,44 +35,13 @@ const Header = () => {
             {navItems.map((item) => {
               if (item.label === "Products") {
                 return (
-                  <DropdownMenu key={item.label} open={openDropdown === item.label} onOpenChange={(open) => setOpenDropdown(open ? item.label : null)}>
-                    <DropdownMenuTrigger asChild>
-                      <Link
-                        to={item.href}
-                        className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg font-semibold flex items-center cursor-pointer group"
-                        onMouseEnter={() => setOpenDropdown(item.label)}
-                        onMouseLeave={() => setOpenDropdown(null)}
-                      >
-                        {item.label}
-                        <ChevronDown className="ml-2 w-5 h-5 group-hover:text-primary transition-colors duration-200" />
-                      </Link>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent
-                      align="start"
-                      className="bg-card border-border"
-                      onMouseEnter={() => setOpenDropdown(item.label)}
-                      onMouseLeave={() => setOpenDropdown(null)}
-                    >
-                      <DropdownMenuItem 
-                        className="hover:bg-accent hover:text-accent-foreground text-base cursor-pointer"
-                        onClick={() => scrollToSection('supplier-risk')}
-                      >
-                        Supplier Risk Assessment
-                      </DropdownMenuItem>
-                      <DropdownMenuItem 
-                        className="hover:bg-accent hover:text-accent-foreground text-base cursor-pointer"
-                        onClick={() => scrollToSection('geo-tracker')}
-                      >
-                        Global Tracker
-                      </DropdownMenuItem>
-                      <DropdownMenuItem 
-                        className="hover:bg-accent hover:text-accent-foreground text-base cursor-pointer"
-                        onClick={() => scrollToSection('intel-map')}
-                      >
-                        Intelligence Map
-                      </DropdownMenuItem>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
+                  <Link
+                    key={item.label}
+                    to={item.href}
+                    className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg font-semibold"
+                  >
+                    {item.label}
+                  </Link>
                 );
               } else if (item.label === "Company") {
                 return (
