@@ -212,22 +212,9 @@ const Hero = () => {
           >
             <motion.div variants={cardVariants}>
               <h4 className="text-2xl md:text-3xl font-extrabold text-foreground mb-4">Why Red Launch Is Different</h4>
-              <ul className="list-disc list-inside text-muted-foreground text-lg">
-                <li>Designed for speed, security, and scale</li>
-                <li>Offers Tier-N visibility — even without direct relationships</li>
-                <li>Turns fragmented data into real-time intelligence</li>
-                <li>Built for mission-critical sectors</li>
-              </ul>
             </motion.div>
             <motion.div variants={cardVariants}>
               <h4 className="text-2xl md:text-3xl font-extrabold text-foreground mb-4">Built for Teams Like Yours</h4>
-              <ul className="list-disc list-inside text-muted-foreground text-lg">
-                <li>Fortune 500 manufacturers</li>
-                <li>Aerospace & defense contractors</li>
-                <li>Automotive OEMs</li>
-                <li>Critical infrastructure providers</li>
-                <li>Medical device & pharma supply chains</li>
-              </ul>
             </motion.div>
           </motion.div>
           
@@ -239,34 +226,6 @@ const Hero = () => {
             className="bg-card/80 rounded-2xl p-10 md:p-16 border border-border mb-16"
           >
             <h3 className="text-3xl md:text-4xl font-extrabold text-foreground mb-6 text-center">Client Pain Points → Our Solutions</h3>
-            <div className="overflow-x-auto">
-              <table className="min-w-full text-left text-muted-foreground">
-                <thead>
-                  <tr>
-                    <th className="py-3 px-6 font-bold text-lg">Pain Point</th>
-                    <th className="py-3 px-6 font-bold text-lg">Red Launch Solution</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="py-3 px-6 text-lg">"We can't see where our risks are."</td>
-                    <td className="py-3 px-6 text-lg">Unified dashboard with real-time visibility</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 px-6 text-lg">"We were blindsided by a Tier 2 delay."</td>
-                    <td className="py-3 px-6 text-lg">Multi-tier mapping + proactive alerts</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 px-6 text-lg">"We waste weeks on compliance reports."</td>
-                    <td className="py-3 px-6 text-lg">Automated scoring and documentation</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 px-6 text-lg">"We need to show the board we're resilient."</td>
-                    <td className="py-3 px-6 text-lg">Visual tools that prove readiness and ROI</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
           </motion.div>
 
         </div>
