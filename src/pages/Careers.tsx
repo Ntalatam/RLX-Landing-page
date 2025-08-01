@@ -8,7 +8,6 @@ const Careers = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const openRolesRef = useRef<HTMLDivElement>(null);
   const internshipsRef = useRef<HTMLDivElement>(null);
-  const cultureRef = useRef<HTMLDivElement>(null);
   const finalCTARef = useRef<HTMLDivElement>(null);
 
   // Scroll progress for each section
@@ -24,11 +23,6 @@ const Careers = () => {
 
   const { scrollYProgress: internshipsProgress } = useScroll({
     target: internshipsRef,
-    offset: ["start end", "end start"]
-  });
-
-  const { scrollYProgress: cultureProgress } = useScroll({
-    target: cultureRef,
     offset: ["start end", "end start"]
   });
 
@@ -49,10 +43,6 @@ const Careers = () => {
   const internshipsOpacity = useTransform(internshipsProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
   const internshipsY = useTransform(internshipsProgress, [0, 0.2, 0.8, 1], [100, 0, 0, -100]);
   const internshipsScale = useTransform(internshipsProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
-
-  const cultureOpacity = useTransform(cultureProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const cultureY = useTransform(cultureProgress, [0, 0.2, 0.8, 1], [100, 0, 0, -100]);
-  const cultureScale = useTransform(cultureProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
 
   const finalCTAOpacity = useTransform(finalCTAProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
   const finalCTAY = useTransform(finalCTAProgress, [0, 0.2, 0.8, 1], [100, 0, 0, -100]);
@@ -222,66 +212,7 @@ const Careers = () => {
             </motion.div>
           </motion.div>
 
-          {/* Culture Section with Scroll Animation */}
-          <motion.div 
-            ref={cultureRef}
-            style={{ opacity: cultureOpacity, y: cultureY, scale: cultureScale }}
-            className="mb-20"
-          >
-            <motion.h2 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-2xl font-bold text-white mb-6 text-center"
-            >
-              Our Culture
-            </motion.h2>
-            <motion.div 
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-10%" }}
-              className="grid grid-cols-1 md:grid-cols-2 gap-6"
-            >
-              <motion.div variants={cardVariants} className="space-y-4">
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span className="text-neutral-200">Mission-first. Ego-free. Execution-oriented.</span>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span className="text-neutral-200">High trust. High autonomy. High impact.</span>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span className="text-neutral-200">Direct customer feedback. Rapid iteration.</span>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span className="text-neutral-200">Technical excellence. Operational pragmatism.</span>
-                </div>
-              </motion.div>
-              <motion.div variants={cardVariants} className="space-y-4">
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span className="text-neutral-200">Real-time supply chain intelligence platform.</span>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span className="text-neutral-200">AI-powered risk assessment and prediction.</span>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span className="text-neutral-200">Compliance monitoring and automated reporting.</span>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span className="text-neutral-200">Geographic and geopolitical risk mapping.</span>
-                </div>
-              </motion.div>
-            </motion.div>
-          </motion.div>
+
 
           {/* How We Hire */}
           <motion.div 
