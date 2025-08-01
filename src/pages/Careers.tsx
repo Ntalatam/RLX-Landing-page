@@ -232,13 +232,13 @@ const Careers = () => {
                 </div>
               </motion.div>
 
-              {/* Product Developer */}
+              {/* Open Application */}
               <motion.div variants={cardVariants} className="bg-neutral-900 p-6 rounded-xl shadow border-border hover:border-primary transition-all">
-                <h3 className="text-2xl font-semibold text-white mb-4">Product Developer</h3>
+                <h3 className="text-2xl font-semibold text-white mb-4">Open Application</h3>
                 <div className="space-y-4">
                   <div className="hover:border hover:border-primary p-3 rounded-lg transition-all">
-                    <h4 className="font-semibold text-white text-sm mb-1">Product Manager</h4>
-                    <p className="text-neutral-300 text-xs">Own product strategy for defense. Translate real challenges into features that matter.</p>
+                    <h4 className="font-semibold text-white text-sm mb-1">Open Application</h4>
+                    <p className="text-neutral-300 text-xs">Have a unique skill set? We're always looking for exceptional talent to join our mission.</p>
                   </div>
                 </div>
               </motion.div>
@@ -271,7 +271,7 @@ const Careers = () => {
                   <p className="text-neutral-300 text-sm">Deploy technology in real defense environments. Learn the intersection of software and national security.</p>
                 </motion.div>
                 <motion.div variants={cardVariants} className="bg-neutral-900 p-6 rounded-xl shadow border-border hover:border-primary transition-all">
-                  <h4 className="text-xl font-semibold text-white mb-4">Product Developer Intern</h4>
+                  <h4 className="text-xl font-semibold text-white mb-4">Software Engineering Intern</h4>
                   <p className="text-neutral-300 text-sm">Build mission-critical applications. Learn to create software that operators depend on.</p>
                 </motion.div>
               </motion.div>
