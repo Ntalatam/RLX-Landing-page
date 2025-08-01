@@ -1,8 +1,68 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const Hero = () => {
+  const whatIsRedLaunchRef = useRef<HTMLDivElement>(null);
+  const outcomeGridRef = useRef<HTMLDivElement>(null);
+  const whyDifferentRef = useRef<HTMLDivElement>(null);
+
+  // Scroll progress for each section
+  const { scrollYProgress: whatIsProgress } = useScroll({
+    target: whatIsRedLaunchRef,
+    offset: ["start end", "end start"]
+  });
+
+  const { scrollYProgress: outcomeProgress } = useScroll({
+    target: outcomeGridRef,
+    offset: ["start end", "end start"]
+  });
+
+  const { scrollYProgress: whyDifferentProgress } = useScroll({
+    target: whyDifferentRef,
+    offset: ["start end", "end start"]
+  });
+
+  // Transform values for animations
+  const whatIsOpacity = useTransform(whatIsProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const whatIsY = useTransform(whatIsProgress, [0, 0.2, 0.8, 1], [100, 0, 0, -100]);
+  const whatIsScale = useTransform(whatIsProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
+
+  const outcomeOpacity = useTransform(outcomeProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const outcomeY = useTransform(outcomeProgress, [0, 0.2, 0.8, 1], [100, 0, 0, -100]);
+  const outcomeScale = useTransform(outcomeProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
+
+  const whyDifferentOpacity = useTransform(whyDifferentProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const whyDifferentY = useTransform(whyDifferentProgress, [0, 0.2, 0.8, 1], [100, 0, 0, -100]);
+  const whyDifferentScale = useTransform(whyDifferentProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
+
+  // Stagger animation variants for cards
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 50, 
+      scale: 0.95 
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1
+    }
+  };
+
   return (
     <>
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -53,67 +113,141 @@ const Hero = () => {
       
 
       
-      {/* New Section Below Home Page */}
-      <section className="min-h-screen flex items-center justify-center border-t border-border pt-16">
+      {/* What Is Red Launch Section with Scroll Animation */}
+      <motion.section 
+        ref={whatIsRedLaunchRef}
+        style={{ opacity: whatIsOpacity, y: whatIsY, scale: whatIsScale }}
+        className="min-h-screen flex items-center justify-center border-t border-border pt-16"
+      >
         <div className="w-full max-w-6xl px-4 md:px-20 py-12">
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-8 text-center leading-tight">What Is Red Launch?</h2>
-          <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-12 text-center max-w-4xl mx-auto leading-relaxed">
+                      <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-8 text-center leading-tight"
+            >
+            What Is Red Launch?
+          </motion.h2>
+                      <motion.p 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-12 text-center max-w-4xl mx-auto leading-relaxed"
+            >
             Red Launch Technologies is a B2B SaaS company specializing in supplier risk management and supply chain intelligence. Built for high-stakes industries like defense, aerospace, manufacturing, and energy, our platform enables teams to:
-          </p>
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-card/80 rounded-2xl p-6 shadow border border-border flex flex-col items-center hover:neon-glow hover:border-primary transition-all duration-300">
+          </motion.p>
+          
+          {/* Feature Cards with Stagger Animation */}
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-10%" }}
+            className="grid md:grid-cols-3 gap-8 mb-12"
+          >
+            <motion.div 
+              variants={cardVariants}
+              className="bg-card/80 rounded-2xl p-6 shadow border border-border flex flex-col items-center hover:neon-glow hover:border-primary transition-all duration-300"
+            >
               <span className="text-3xl md:text-4xl font-extrabold text-primary mb-4 neon-text">1. Identify & Monitor</span>
               <p className="text-muted-foreground text-center text-lg leading-relaxed">Detect supplier weaknesses before they cause mission disruption. From financial instability to compliance gaps — we surface what matters.</p>
-            </div>
-            <div className="bg-card/80 rounded-2xl p-6 shadow border border-border flex flex-col items-center hover:neon-glow hover:border-primary transition-all duration-300">
+            </motion.div>
+            <motion.div 
+              variants={cardVariants}
+              className="bg-card/80 rounded-2xl p-6 shadow border border-border flex flex-col items-center hover:neon-glow hover:border-primary transition-all duration-300"
+            >
               <span className="text-3xl md:text-4xl font-extrabold text-primary mb-4 neon-text">2. Visualize Disruptions</span>
               <p className="text-muted-foreground text-center text-lg leading-relaxed">AI-powered disruption maps that reveal hotspots, chokepoints, and cascading impacts across global networks.</p>
-            </div>
-            <div className="bg-card/80 rounded-2xl p-6 shadow border border-border flex flex-col items-center hover:neon-glow hover:border-primary transition-all duration-300">
+            </motion.div>
+            <motion.div 
+              variants={cardVariants}
+              className="bg-card/80 rounded-2xl p-6 shadow border border-border flex flex-col items-center hover:neon-glow hover:border-primary transition-all duration-300"
+            >
               <span className="text-3xl md:text-4xl font-extrabold text-primary mb-4 neon-text">3. Real-Time Decisions</span>
               <p className="text-muted-foreground text-center text-lg leading-relaxed">Get proactive insights — not just alerts. Automate escalation, rerouting, and resource allocation based on live threat intel.</p>
-            </div>
-          </div>
-          <p className="text-xl md:text-2xl text-muted-foreground text-center mb-12">We don't just monitor risk. We make it visible, understandable, and actionable.</p>
+            </motion.div>
+          </motion.div>
           
-          {/* 3-Outcome Grid Section */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div className="p-6 rounded-xl border border-muted hover:border-primary transition-all bg-secondary/5 hover:bg-secondary/10">
+                      <motion.p 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="text-xl md:text-2xl text-muted-foreground text-center mb-12"
+            >
+            We don't just monitor risk. We make it visible, understandable, and actionable.
+          </motion.p>
+          
+          {/* 3-Outcome Grid Section with Scroll Animation */}
+          <motion.div 
+            ref={outcomeGridRef}
+            style={{ opacity: outcomeOpacity, y: outcomeY, scale: outcomeScale }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
+          >
+            <motion.div 
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="p-6 rounded-xl border border-muted hover:border-primary transition-all bg-secondary/5 hover:bg-secondary/10"
+            >
               <h3 className="text-2xl font-semibold text-foreground mb-4">Mission Continuity</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Prevent disruption to weapons production, critical infrastructure, and battlefield readiness by acting on vulnerabilities before they escalate.
               </p>
-            </div>
+            </motion.div>
             
-            <div className="p-6 rounded-xl border border-muted hover:border-primary transition-all bg-secondary/5 hover:bg-secondary/10">
+            <motion.div 
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="p-6 rounded-xl border border-muted hover:border-primary transition-all bg-secondary/5 hover:bg-secondary/10"
+            >
               <h3 className="text-2xl font-semibold text-foreground mb-4">Supply Chain Readiness</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Maintain uninterrupted flow of compliant, secure, and verified materials through automated monitoring of high-risk suppliers.
               </p>
-            </div>
+            </motion.div>
             
-            <div className="p-6 rounded-xl border border-muted hover:border-primary transition-all bg-secondary/5 hover:bg-secondary/10">
+            <motion.div 
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="p-6 rounded-xl border border-muted hover:border-primary transition-all bg-secondary/5 hover:bg-secondary/10"
+            >
               <h3 className="text-2xl font-semibold text-foreground mb-4">Strategic Autonomy</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Reduce reliance on foreign-owned subcontractors through traceable, tiered visibility into your defense supplier base.
               </p>
-            </div>
-          </div>
-          
-
+            </motion.div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
       
 
       
 
       
-      {/* New Section Below Home Page */}
-      <section className="min-h-screen flex items-center justify-center border-t border-border pt-8">
+      {/* Why Red Launch Is Different Section with Scroll Animation */}
+      <motion.section 
+        ref={whyDifferentRef}
+        style={{ opacity: whyDifferentOpacity, y: whyDifferentY, scale: whyDifferentScale }}
+        className="min-h-screen flex items-center justify-center border-t border-border pt-8"
+      >
         <div className="w-full max-w-6xl px-4 md:px-20 py-8">
 
-          <div className="grid md:grid-cols-2 gap-12 mb-16">
-            <div>
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-10%" }}
+            className="grid md:grid-cols-2 gap-12 mb-16"
+          >
+            <motion.div variants={cardVariants}>
               <h4 className="text-2xl md:text-3xl font-extrabold text-foreground mb-4">Why Red Launch Is Different</h4>
               <ul className="list-disc list-inside text-muted-foreground text-lg">
                 <li>Designed for speed, security, and scale</li>
@@ -121,8 +255,8 @@ const Hero = () => {
                 <li>Turns fragmented data into real-time intelligence</li>
                 <li>Built for mission-critical sectors</li>
               </ul>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div variants={cardVariants}>
               <h4 className="text-2xl md:text-3xl font-extrabold text-foreground mb-4">Built for Teams Like Yours</h4>
               <ul className="list-disc list-inside text-muted-foreground text-lg">
                 <li>Fortune 500 manufacturers</li>
@@ -131,9 +265,16 @@ const Hero = () => {
                 <li>Critical infrastructure providers</li>
                 <li>Medical device & pharma supply chains</li>
               </ul>
-            </div>
-          </div>
-          <div className="bg-card/80 rounded-2xl p-10 md:p-16 border border-border mb-16">
+            </motion.div>
+          </motion.div>
+          
+          <motion.div 
+            initial={{ opacity: 0, y: 50, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="bg-card/80 rounded-2xl p-10 md:p-16 border border-border mb-16"
+          >
             <h3 className="text-3xl md:text-4xl font-extrabold text-foreground mb-6 text-center">Client Pain Points → Our Solutions</h3>
             <div className="overflow-x-auto">
               <table className="min-w-full text-left text-muted-foreground">
@@ -163,10 +304,10 @@ const Hero = () => {
                 </tbody>
               </table>
             </div>
-          </div>
+          </motion.div>
 
         </div>
-      </section>
+      </motion.section>
       
       {/* Final CTA Section */}
       <section id="cta" className="py-32 border-t border-border">
