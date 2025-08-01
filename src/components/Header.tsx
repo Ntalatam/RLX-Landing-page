@@ -48,7 +48,7 @@ const Header = () => {
                   <DropdownMenu key={item.label} open={openDropdown === item.label} onOpenChange={(open) => setOpenDropdown(open ? item.label : null)}>
                     <DropdownMenuTrigger asChild>
                       <Link
-                        to="/about"
+                        to="/mission"
                         className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg font-semibold flex items-center cursor-pointer group"
                         onMouseEnter={() => setOpenDropdown(item.label)}
                         onMouseLeave={() => setOpenDropdown(null)}
