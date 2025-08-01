@@ -16,7 +16,7 @@ const Header = () => {
 
   const navItems = [
     { label: "Product", href: "/products" },
-    { label: "Company", href: "/mission" },
+    { label: "Company", href: "/company" },
     { label: "Media", href: "/media" },
   ];
 
@@ -33,7 +33,7 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-10">
             {navItems.map((item) => {
-              if (item.label === "Product") {
+              if (item.label === "Products") {
                 return (
                   <Link
                     key={item.label}
@@ -45,13 +45,35 @@ const Header = () => {
                 );
               } else if (item.label === "Company") {
                 return (
-                  <Link
-                    key={item.label}
-                    to={item.href}
-                    className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg font-semibold"
-                  >
-                    {item.label}
-                  </Link>
+                  <DropdownMenu key={item.label} open={openDropdown === item.label} onOpenChange={(open) => setOpenDropdown(open ? item.label : null)}>
+                    <DropdownMenuTrigger asChild>
+                      <Link
+                        to="/mission"
+                        className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg font-semibold flex items-center cursor-pointer group"
+                        onMouseEnter={() => setOpenDropdown(item.label)}
+                        onMouseLeave={() => setOpenDropdown(null)}
+                      >
+                        {item.label}
+                        <ChevronDown className="ml-2 w-5 h-5 group-hover:text-primary transition-colors duration-200" />
+                      </Link>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent
+                      align="start"
+                      className="bg-card border-border"
+                      onMouseEnter={() => setOpenDropdown(item.label)}
+                      onMouseLeave={() => setOpenDropdown(null)}
+                    >
+                      <DropdownMenuItem asChild className="hover:bg-accent hover:text-accent-foreground text-base">
+                        <Link to="/founding-team">Founding Team</Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild className="hover:bg-accent hover:text-accent-foreground text-base">
+                        <Link to="/mission">Mission</Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild className="hover:bg-accent hover:text-accent-foreground text-base">
+                        <Link to="/careers">Careers</Link>
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
                 );
               } else if (item.label === "Media") {
                 return (
