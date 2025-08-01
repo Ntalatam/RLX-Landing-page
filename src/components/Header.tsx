@@ -47,15 +47,14 @@ const Header = () => {
                 return (
                   <DropdownMenu key={item.label} open={openDropdown === item.label} onOpenChange={(open) => setOpenDropdown(open ? item.label : null)}>
                     <DropdownMenuTrigger asChild>
-                      <Link
-                        to="/mission"
+                      <span
                         className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg font-semibold flex items-center cursor-pointer group"
                         onMouseEnter={() => setOpenDropdown(item.label)}
                         onMouseLeave={() => setOpenDropdown(null)}
                       >
                         {item.label}
                         <ChevronDown className="ml-2 w-5 h-5 group-hover:text-primary transition-colors duration-200" />
-                      </Link>
+                      </span>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent
                       align="start"
