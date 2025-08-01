@@ -6,7 +6,6 @@ import { useRef } from "react";
 
 const Careers = () => {
   const heroRef = useRef<HTMLDivElement>(null);
-  const whyJoinRef = useRef<HTMLDivElement>(null);
   const openRolesRef = useRef<HTMLDivElement>(null);
   const internshipsRef = useRef<HTMLDivElement>(null);
   const cultureRef = useRef<HTMLDivElement>(null);
@@ -15,11 +14,6 @@ const Careers = () => {
   // Scroll progress for each section
   const { scrollYProgress: heroProgress } = useScroll({
     target: heroRef,
-    offset: ["start end", "end start"]
-  });
-
-  const { scrollYProgress: whyJoinProgress } = useScroll({
-    target: whyJoinRef,
     offset: ["start end", "end start"]
   });
 
@@ -47,10 +41,6 @@ const Careers = () => {
   const heroOpacity = useTransform(heroProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
   const heroY = useTransform(heroProgress, [0, 0.2, 0.8, 1], [100, 0, 0, -100]);
   const heroScale = useTransform(heroProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
-
-  const whyJoinOpacity = useTransform(whyJoinProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const whyJoinY = useTransform(whyJoinProgress, [0, 0.2, 0.8, 1], [100, 0, 0, -100]);
-  const whyJoinScale = useTransform(whyJoinProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
 
   const openRolesOpacity = useTransform(openRolesProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
   const openRolesY = useTransform(openRolesProgress, [0, 0.2, 0.8, 1], [100, 0, 0, -100]);
@@ -125,68 +115,7 @@ const Careers = () => {
             </motion.p>
           </motion.div>
 
-          {/* Why Join Red Launch with Scroll Animation */}
-          <motion.div 
-            ref={whyJoinRef}
-            style={{ opacity: whyJoinOpacity, y: whyJoinY, scale: whyJoinScale }}
-            className="mb-20"
-          >
-            <motion.h2 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-3xl font-bold text-white mb-8 text-center"
-            >
-              Why Red Launch
-            </motion.h2>
-            <motion.div 
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-10%" }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-6"
-            >
-              <motion.div variants={cardVariants}>
-                <Card className="bg-neutral-900 p-4 rounded-xl shadow border-border hover:border-primary transition-all">
-                  <CardContent className="p-0">
-                    <h4 className="text-xl font-semibold text-white mb-2">Defense First</h4>
-                    <p className="text-neutral-300 text-sm">Build systems that protect national security and critical infrastructure.</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-              <motion.div variants={cardVariants}>
-                <Card className="bg-neutral-900 p-4 rounded-xl shadow border-border hover:border-primary transition-all">
-                  <CardContent className="p-0">
-                    <h4 className="text-xl font-semibold text-white mb-2">Mission Critical</h4>
-                    <p className="text-neutral-300 text-sm">Solve real problems with real consequences. No room for failure.</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-              <motion.div variants={cardVariants}>
-                <Card className="bg-neutral-900 p-4 rounded-xl shadow border-border hover:border-primary transition-all">
-                  <CardContent className="p-0">
-                    <h4 className="text-xl font-semibold text-white mb-2">Secure Systems</h4>
-                    <p className="text-neutral-300 text-sm">Design and deploy mission-critical software with enterprise-grade security.</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </motion.div>
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              viewport={{ once: true }}
-              className="mt-8 text-center"
-            >
-              <p className="text-lg text-neutral-300 mb-4">
-                We operate with urgency, autonomy, and high trust. No layers of bureaucracy—just sharp execution.
-              </p>
-              <p className="text-lg text-neutral-300">
-                Your work will matter. Your code will protect lives.
-              </p>
-            </motion.div>
-          </motion.div>
+
 
           {/* Open Roles Section with Scroll Animation */}
           <motion.div 
