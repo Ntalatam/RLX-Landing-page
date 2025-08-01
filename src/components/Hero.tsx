@@ -129,15 +129,7 @@ const Hero = () => {
             >
             What Is Red Launch?
           </motion.h2>
-                      <motion.p 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-12 text-center max-w-4xl mx-auto leading-relaxed"
-            >
-            Red Launch Technologies is a B2B SaaS company specializing in supplier risk management and supply chain intelligence. Built for high-stakes industries like defense, aerospace, manufacturing, and energy, our platform enables teams to:
-          </motion.p>
+
           
           {/* Feature Cards with Stagger Animation */}
           <motion.div 
