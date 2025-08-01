@@ -123,7 +123,7 @@ const FoundingTeam = () => {
         <motion.section 
           ref={finalCTARef}
           style={{ opacity: finalCTAOpacity, y: finalCTAY, scale: finalCTAScale }}
-          className="container mx-auto px-6 max-w-6xl text-center"
+          className="container mx-auto px-6 max-w-6xl text-center mt-20"
         >
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
