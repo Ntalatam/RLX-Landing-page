@@ -9,18 +9,14 @@ const founders = [
     role: "Chief Executive Officer",
     linkedin: "https://www.linkedin.com/in/tylerfesta/", // Placeholder, update as needed
     image: "https://media.licdn.com/dms/image/v2/C5603AQFkvYO2TInayA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1611678405219?e=1755734400&v=beta&t=OLI_HzJLNud6-9lg_x0CDUpRy2TArVtS00GX36qJGUk",
-    bio: `Tyler is a mission-driven CEO with a background in AI, government tech, and GTM leadership. He's led enterprise initiatives at Palantir and built teams at the intersection of supply chain, defense, and analytics. Tyler's focus: clarity, precision, and building software that prevents billion-dollar disruptions.`,
-    quote: "I've seen how supply chain risks can cascade into billion-dollar problems. Our goal at Red Launch is to provide clarity before disruption hits.",
-    expertise: ["AI & Machine Learning", "Government Technology", "Enterprise Sales", "Team Building", "Strategic Planning"]
+    bio: `Tyler is a mission-driven CEO with a background in AI, government tech, and GTM leadership. He's led enterprise initiatives at Palantir and built teams at the intersection of supply chain, defense, and analytics. Tyler's focus: clarity, precision, and building software that prevents billion-dollar disruptions.`
   },
   {
     name: "Jesus Badillo",
     role: "Chief Technology Officer",
     linkedin: "https://www.linkedin.com/in/jesus-badillo/",
     image: "https://media.licdn.com/dms/image/v2/C4E03AQFTg5mCXTh6VQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1631651190811?e=1755734400&v=beta&t=Fyci72jWW2aYL2677G3EVXBJkVOmJPytHpcIyCL51oA",
-    bio: `Jesus is a systems-focused CTO with deep expertise in secure, scalable platforms. He holds advanced degrees in Intelligent Systems Engineering from Indiana University and leads Red Launch's technical architecture, product velocity, and engineering standards.`,
-    quote: "My job is to make complexity feel simple. Our platform should feel as easy as clicking a button — even if it's processing hundreds of variables in the background.",
-    expertise: ["System Architecture", "Security Engineering", "Scalable Platforms", "Product Development", "Technical Leadership"]
+    bio: `Jesus is a systems-focused CTO with deep expertise in secure, scalable platforms. He holds advanced degrees in Intelligent Systems Engineering from Indiana University and leads Red Launch's technical architecture, product velocity, and engineering standards.`
   }
 ];
 
@@ -227,18 +223,7 @@ const FoundingTeam = () => {
                     <a href={founder.linkedin} target="_blank" rel="noopener noreferrer" className="text-primary underline mb-4 hover:text-primary/80 transition-colors inline-block">Connect on LinkedIn</a>
                   </div>
                 </div>
-                <p className="text-muted-foreground text-base leading-relaxed mt-6 mb-6">{founder.bio}</p>
-                <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-foreground mb-2">Areas of Expertise:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {founder.expertise.map((skill, skillIdx) => (
-                      <span key={skillIdx} className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full border border-primary/20">
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <blockquote className="italic text-muted-foreground border-l-4 border-primary pl-4 text-base">"{founder.quote}"</blockquote>
+                <p className="text-muted-foreground text-base leading-relaxed mt-6">{founder.bio}</p>
               </motion.div>
             ))}
           </motion.div>

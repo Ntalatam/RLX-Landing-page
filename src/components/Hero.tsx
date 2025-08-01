@@ -87,19 +87,17 @@ const Hero = () => {
               <div className="relative w-full max-w-2xl lg:max-w-3xl mr-0 lg:mr-[-2rem]">
                 <video 
                   src="https://v1.pinimg.com/videos/mc/720p/98/e9/27/98e927e0e7c1f8e885b4556b0ec4e976.mp4"
-                  className="w-full h-auto object-contain filter drop-shadow-2xl rounded-xl opacity-70 mix-blend-multiply"
+                  className="w-full h-auto object-contain filter drop-shadow-2xl rounded-xl"
                   style={{
-                    filter: 'drop-shadow(0 0 20px rgba(255, 0, 51, 0.2)) brightness(0.8) contrast(1.2)'
+                    filter: 'drop-shadow(0 0 20px rgba(255, 0, 51, 0.3)) brightness(1.2) contrast(1.1)'
                   }}
                   autoPlay
                   loop
                   muted
                   playsInline
                 />
-                {/* Dark overlay for better blending */}
-                <div className="absolute inset-0 bg-black/30 rounded-xl"></div>
-                {/* Subtle glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent rounded-xl blur-2xl"></div>
+                {/* Overlay glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent rounded-xl blur-xl"></div>
               </div>
             </div>
           </div>
