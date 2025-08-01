@@ -170,8 +170,8 @@ const Products = () => {
           >
             {features.map((feature, index) => (
               <motion.div key={index} variants={cardVariants}>
-                <Card className="bg-card/80 hover:bg-card/90 hover:scale-105 hover:neon-glow transition-all duration-300 border border-border">
-                  <CardHeader className="text-center">
+                <Card className="bg-card/80 hover:bg-card/90 hover:scale-105 hover:neon-glow transition-all duration-300 border border-border h-full flex flex-col">
+                  <CardHeader className="text-center flex-shrink-0">
                     <div className="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mx-auto mb-6">
                       <feature.icon className="w-8 h-8 text-primary" />
                     </div>
@@ -182,8 +182,8 @@ const Products = () => {
                       {feature.description}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-3">
+                  <CardContent className="flex-1 flex flex-col">
+                    <ul className="space-y-3 flex-1">
                       {feature.benefits.map((benefit, idx) => (
                         <li key={idx} className="flex items-center text-muted-foreground text-base">
                           <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
@@ -309,8 +309,8 @@ const Products = () => {
             >
               {capabilities.map((capability, index) => (
                 <motion.div key={index} variants={cardVariants}>
-                  <Card className="bg-card/80 hover:bg-card/90 hover:neon-glow transition-all duration-300 border border-border">
-                    <CardHeader>
+                  <Card className="bg-card/80 hover:bg-card/90 hover:neon-glow transition-all duration-300 border border-border h-full flex flex-col">
+                    <CardHeader className="flex-shrink-0">
                       <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
                         <capability.icon className="w-6 h-6 text-primary" />
                       </div>
@@ -318,8 +318,8 @@ const Products = () => {
                         {capability.title}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent>
-                      <CardDescription className="text-lg text-muted-foreground leading-relaxed">
+                    <CardContent className="flex-1 flex flex-col">
+                      <CardDescription className="text-lg text-muted-foreground leading-relaxed flex-1">
                         {capability.description}
                       </CardDescription>
                     </CardContent>
