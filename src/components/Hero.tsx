@@ -51,35 +51,11 @@ const Hero = () => {
         </div>
       </section>
       
-      {/* 3-Outcome Grid Section */}
-      <section id="outcomes" className="container mx-auto px-4 md:px-20 py-24">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-6 rounded-xl border border-muted hover:border-primary transition-all bg-secondary/5 hover:bg-secondary/10">
-            <h3 className="text-2xl font-semibold text-foreground mb-4">Mission Continuity</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Prevent disruption to weapons production, critical infrastructure, and battlefield readiness by acting on vulnerabilities before they escalate.
-            </p>
-          </div>
-          
-          <div className="p-6 rounded-xl border border-muted hover:border-primary transition-all bg-secondary/5 hover:bg-secondary/10">
-            <h3 className="text-2xl font-semibold text-foreground mb-4">Supply Chain Readiness</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Maintain uninterrupted flow of compliant, secure, and verified materials through automated monitoring of high-risk suppliers.
-            </p>
-          </div>
-          
-          <div className="p-6 rounded-xl border border-muted hover:border-primary transition-all bg-secondary/5 hover:bg-secondary/10">
-            <h3 className="text-2xl font-semibold text-foreground mb-4">Strategic Autonomy</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Reduce reliance on foreign-owned subcontractors through traceable, tiered visibility into your defense supplier base.
-            </p>
-          </div>
-        </div>
-      </section>
+
       
       {/* New Section Below Home Page */}
-      <section className="min-h-screen flex items-center justify-center border-t border-border pt-32">
-        <div className="w-full max-w-6xl px-4 md:px-20 py-20">
+      <section className="min-h-screen flex items-center justify-center border-t border-border pt-16">
+        <div className="w-full max-w-6xl px-4 md:px-20 py-12">
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-8 text-center leading-tight">What Is Red Launch?</h2>
           <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-12 text-center max-w-4xl mx-auto leading-relaxed">
             Red Launch Technologies is a B2B SaaS company specializing in supplier risk management and supply chain intelligence. Built for high-stakes industries like defense, aerospace, manufacturing, and energy, our platform enables teams to:
@@ -99,65 +75,43 @@ const Hero = () => {
             </div>
           </div>
           <p className="text-xl md:text-2xl text-muted-foreground text-center mb-12">We don't just monitor risk. We make it visible, understandable, and actionable.</p>
-          <div className="flex flex-col sm:flex-row justify-center gap-8 mt-12">
-            <a href="#" className="px-10 py-6 bg-card text-foreground font-bold rounded-lg shadow border border-border hover:bg-accent hover:text-accent-foreground transition text-xl">Request Demo</a>
+          
+          {/* 3-Outcome Grid Section */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div className="p-6 rounded-xl border border-muted hover:border-primary transition-all bg-secondary/5 hover:bg-secondary/10">
+              <h3 className="text-2xl font-semibold text-foreground mb-4">Mission Continuity</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Prevent disruption to weapons production, critical infrastructure, and battlefield readiness by acting on vulnerabilities before they escalate.
+              </p>
+            </div>
+            
+            <div className="p-6 rounded-xl border border-muted hover:border-primary transition-all bg-secondary/5 hover:bg-secondary/10">
+              <h3 className="text-2xl font-semibold text-foreground mb-4">Supply Chain Readiness</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Maintain uninterrupted flow of compliant, secure, and verified materials through automated monitoring of high-risk suppliers.
+              </p>
+            </div>
+            
+            <div className="p-6 rounded-xl border border-muted hover:border-primary transition-all bg-secondary/5 hover:bg-secondary/10">
+              <h3 className="text-2xl font-semibold text-foreground mb-4">Strategic Autonomy</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Reduce reliance on foreign-owned subcontractors through traceable, tiered visibility into your defense supplier base.
+              </p>
+            </div>
           </div>
+          
+
         </div>
       </section>
       
 
       
-      {/* Platform Overview Section */}
-      <section id="platform" className="py-24 border-t border-border">
-        <div className="container mx-auto px-4 md:px-20">
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 text-center">
-            The Red Launch Platform
-          </h2>
-          <p className="text-muted-foreground text-center text-lg leading-relaxed mb-12 max-w-3xl mx-auto">
-            Built for real-world complexity — Red Launch fuses compliance data, geopolitical threat signals, and AI to detect and prevent mission-critical supply chain risks.
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-secondary/5 hover:bg-secondary/10 border border-border rounded-xl p-8 transition-all hover:border-primary">
-              <div className="w-12 h-12 bg-muted rounded mb-4"></div>
-              <h3 className="text-2xl font-semibold text-foreground mb-2">Compliance & Security Monitoring</h3>
-              <p className="text-muted-foreground leading-relaxed text-base">
-                Track DFARS, ITAR, and CMMC compliance across your supplier base in real-time — with instant alerts for any deviation or emerging threat.
-              </p>
-            </div>
-            
-            <div className="bg-secondary/5 hover:bg-secondary/10 border border-border rounded-xl p-8 transition-all hover:border-primary">
-              <div className="w-12 h-12 bg-muted rounded mb-4"></div>
-              <h3 className="text-2xl font-semibold text-foreground mb-2">AI-Powered Disruption Intelligence</h3>
-              <p className="text-muted-foreground leading-relaxed text-base">
-                Forecast supply interruptions using machine learning trained on defense sector logistics, political instability, cyberthreats, and vendor health.
-              </p>
-            </div>
-            
-            <div className="bg-secondary/5 hover:bg-secondary/10 border border-border rounded-xl p-8 transition-all hover:border-primary">
-              <div className="w-12 h-12 bg-muted rounded mb-4"></div>
-              <h3 className="text-2xl font-semibold text-foreground mb-2">Mission-Critical Traceability</h3>
-              <p className="text-muted-foreground leading-relaxed text-base">
-                Drill down into the tiered structure of your global supplier network to identify hidden vulnerabilities and ensure readiness at every level.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+
       
       {/* New Section Below Home Page */}
-      <section className="min-h-screen flex items-center justify-center border-t border-border pt-32">
-        <div className="w-full max-w-6xl px-4 md:px-20 py-20">
-          <div className="bg-card/80 rounded-2xl p-10 md:p-16 border border-border mb-16 neon-glow">
-            <h3 className="text-3xl md:text-4xl font-extrabold text-foreground mb-6 text-center">Unified Workflow in Action</h3>
-            <ul className="list-disc list-inside text-muted-foreground text-lg mb-6 max-w-4xl mx-auto">
-              <li>Risk Assessment detects a cybersecurity breach in a chipmaker</li>
-              <li>Geographical Tracker shows they're in a conflict zone</li>
-              <li>Visualization Map reveals impact on three defense contracts</li>
-              <li>You're alerted, activate backups, and reroute within hours</li>
-            </ul>
-            <p className="text-center text-primary font-bold text-xl neon-text">→ A multi-million-dollar delay is averted.</p>
-          </div>
+      <section className="min-h-screen flex items-center justify-center border-t border-border pt-8">
+        <div className="w-full max-w-6xl px-4 md:px-20 py-8">
+
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             <div>
               <h4 className="text-2xl md:text-3xl font-extrabold text-foreground mb-4">Why Red Launch Is Different</h4>
@@ -210,14 +164,7 @@ const Hero = () => {
               </table>
             </div>
           </div>
-          <div className="text-center mt-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary mb-6 neon-text">Ready to Launch?</h2>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8">See how Red Launch can help you move faster, avoid blind spots, and stay mission-ready.</p>
-            <div className="flex flex-col sm:flex-row justify-center gap-8 mt-10">
-              <a href="#" className="px-10 py-6 bg-primary text-primary-foreground font-bold rounded-lg shadow hover:bg-primary/90 transition text-xl neon-glow">Request a Demo</a>
-              <a href="/careers" className="px-10 py-6 bg-card text-foreground font-bold rounded-lg shadow border border-border hover:bg-accent hover:text-accent-foreground transition text-xl">Join Our Team</a>
-            </div>
-          </div>
+
         </div>
       </section>
       

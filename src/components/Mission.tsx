@@ -50,8 +50,8 @@ const Mission = () => {
               across aerospace, defense, manufacturing, and energy sectors—industries that demand 
               precision, security, and adaptability.
             </p>
-            <Button className="mt-6 bg-primary text-primary-foreground hover:bg-primary/90 neon-glow">
-              Learn More About Our Platform
+            <Button className="mt-6 bg-primary text-primary-foreground hover:bg-primary/90 neon-glow" asChild>
+              <a href="/products">Learn More About Our Platform</a>
             </Button>
           </div>
 
