@@ -24,8 +24,6 @@ const FoundingTeam = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const valuesRef = useRef<HTMLDivElement>(null);
   const foundersRef = useRef<HTMLDivElement>(null);
-  const storyRef = useRef<HTMLDivElement>(null);
-  const cultureRef = useRef<HTMLDivElement>(null);
   const finalCTARef = useRef<HTMLDivElement>(null);
 
   // Scroll progress for each section
@@ -41,16 +39,6 @@ const FoundingTeam = () => {
 
   const { scrollYProgress: foundersProgress } = useScroll({
     target: foundersRef,
-    offset: ["start end", "end start"]
-  });
-
-  const { scrollYProgress: storyProgress } = useScroll({
-    target: storyRef,
-    offset: ["start end", "end start"]
-  });
-
-  const { scrollYProgress: cultureProgress } = useScroll({
-    target: cultureRef,
     offset: ["start end", "end start"]
   });
 
@@ -71,14 +59,6 @@ const FoundingTeam = () => {
   const foundersOpacity = useTransform(foundersProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
   const foundersY = useTransform(foundersProgress, [0, 0.2, 0.8, 1], [100, 0, 0, -100]);
   const foundersScale = useTransform(foundersProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
-
-  const storyOpacity = useTransform(storyProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const storyY = useTransform(storyProgress, [0, 0.2, 0.8, 1], [100, 0, 0, -100]);
-  const storyScale = useTransform(storyProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
-
-  const cultureOpacity = useTransform(cultureProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const cultureY = useTransform(cultureProgress, [0, 0.2, 0.8, 1], [100, 0, 0, -100]);
-  const cultureScale = useTransform(cultureProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
 
   const finalCTAOpacity = useTransform(finalCTAProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
   const finalCTAY = useTransform(finalCTAProgress, [0, 0.2, 0.8, 1], [100, 0, 0, -100]);
@@ -229,121 +209,7 @@ const FoundingTeam = () => {
           </motion.div>
         </motion.section>
 
-        {/* Company Story Section with Scroll Animation */}
-        <motion.section 
-          ref={storyRef}
-          style={{ opacity: storyOpacity, y: storyY, scale: storyScale }}
-          className="container mx-auto px-6 max-w-6xl mb-20"
-        >
-          <motion.h2 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center"
-          >
-            Our Story
-          </motion.h2>
-          <motion.div 
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-10%" }}
-            className="grid md:grid-cols-2 gap-12"
-          >
-            <motion.div variants={cardVariants}>
-              <h3 className="text-2xl font-semibold text-foreground mb-4">The Problem We Solve</h3>
-              <p className="text-muted-foreground mb-4">
-                Supply chain disruptions cost the global economy trillions annually. But the real cost isn't just financial — it's operational readiness, national security, and human lives.
-              </p>
-              <p className="text-muted-foreground mb-4">
-                Traditional supply chain management tools are reactive, fragmented, and slow. They can't keep up with the speed of modern threats or the complexity of global networks.
-              </p>
-              <p className="text-muted-foreground">
-                We built Red Launch because we've seen firsthand how the gap between insight and action can have catastrophic consequences.
-              </p>
-            </motion.div>
-            <motion.div variants={cardVariants}>
-              <h3 className="text-2xl font-semibold text-foreground mb-4">Our Approach</h3>
-              <p className="text-muted-foreground mb-4">
-                We combine real-time data processing, advanced AI, and intuitive visualization to create a platform that doesn't just monitor supply chains — it understands them.
-              </p>
-              <p className="text-muted-foreground mb-4">
-                Our technology provides the clarity and speed that operators need to make critical decisions under pressure, with confidence.
-              </p>
-              <p className="text-muted-foreground">
-                We're not just building software. We're building the infrastructure that keeps critical systems running when it matters most.
-              </p>
-            </motion.div>
-          </motion.div>
-        </motion.section>
 
-        {/* Team Culture Section with Scroll Animation */}
-        <motion.section 
-          ref={cultureRef}
-          style={{ opacity: cultureOpacity, y: cultureY, scale: cultureScale }}
-          className="container mx-auto px-6 max-w-6xl mb-20"
-        >
-          <motion.h2 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center"
-          >
-            Team Culture
-          </motion.h2>
-          <motion.div 
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-10%" }}
-            className="grid md:grid-cols-2 gap-12"
-          >
-            <motion.div variants={cardVariants}>
-              <h3 className="text-2xl font-semibold text-foreground mb-4">How We Work</h3>
-              <ul className="space-y-3 text-muted-foreground">
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Mission-driven development with clear objectives</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Rapid iteration and continuous feedback loops</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Cross-functional collaboration and knowledge sharing</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>High standards for code quality and system reliability</span>
-                </li>
-              </ul>
-            </motion.div>
-            <motion.div variants={cardVariants}>
-              <h3 className="text-2xl font-semibold text-foreground mb-4">What We Value</h3>
-              <ul className="space-y-3 text-muted-foreground">
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Technical excellence and operational pragmatism</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Clear communication and transparent decision-making</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Continuous learning and professional growth</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Impact-driven work that serves real-world needs</span>
-                </li>
-              </ul>
-            </motion.div>
-          </motion.div>
-        </motion.section>
 
         {/* Final CTA Section with Scroll Animation */}
         <motion.section 
