@@ -7,7 +7,6 @@ import { useRef } from "react";
 const Hero = () => {
   const whatIsRedLaunchRef = useRef<HTMLDivElement>(null);
   const outcomeGridRef = useRef<HTMLDivElement>(null);
-  const whyDifferentRef = useRef<HTMLDivElement>(null);
 
   // Scroll progress for each section
   const { scrollYProgress: whatIsProgress } = useScroll({
@@ -20,11 +19,6 @@ const Hero = () => {
     offset: ["start end", "end start"]
   });
 
-  const { scrollYProgress: whyDifferentProgress } = useScroll({
-    target: whyDifferentRef,
-    offset: ["start end", "end start"]
-  });
-
   // Transform values for animations
   const whatIsOpacity = useTransform(whatIsProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
   const whatIsY = useTransform(whatIsProgress, [0, 0.2, 0.8, 1], [100, 0, 0, -100]);
@@ -33,10 +27,6 @@ const Hero = () => {
   const outcomeOpacity = useTransform(outcomeProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
   const outcomeY = useTransform(outcomeProgress, [0, 0.2, 0.8, 1], [100, 0, 0, -100]);
   const outcomeScale = useTransform(outcomeProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
-
-  const whyDifferentOpacity = useTransform(whyDifferentProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const whyDifferentY = useTransform(whyDifferentProgress, [0, 0.2, 0.8, 1], [100, 0, 0, -100]);
-  const whyDifferentScale = useTransform(whyDifferentProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
 
   // Stagger animation variants for cards
   const containerVariants = {
@@ -195,41 +185,7 @@ const Hero = () => {
       
 
       
-      {/* Why Red Launch Is Different Section with Scroll Animation */}
-      <motion.section 
-        ref={whyDifferentRef}
-        style={{ opacity: whyDifferentOpacity, y: whyDifferentY, scale: whyDifferentScale }}
-        className="min-h-screen flex items-center justify-center border-t border-border pt-8"
-      >
-        <div className="w-full max-w-6xl px-4 md:px-20 py-8">
 
-          <motion.div 
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-10%" }}
-            className="grid md:grid-cols-2 gap-12 mb-16"
-          >
-            <motion.div variants={cardVariants}>
-              <h4 className="text-2xl md:text-3xl font-extrabold text-foreground mb-4">Why Red Launch Is Different</h4>
-            </motion.div>
-            <motion.div variants={cardVariants}>
-              <h4 className="text-2xl md:text-3xl font-extrabold text-foreground mb-4">Built for Teams Like Yours</h4>
-            </motion.div>
-          </motion.div>
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 50, scale: 0.95 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="bg-card/80 rounded-2xl p-10 md:p-16 border border-border mb-16"
-          >
-            <h3 className="text-3xl md:text-4xl font-extrabold text-foreground mb-6 text-center">Client Pain Points → Our Solutions</h3>
-          </motion.div>
-
-        </div>
-      </motion.section>
       
       {/* Final CTA Section */}
       <section id="cta" className="py-32 border-t border-border">
