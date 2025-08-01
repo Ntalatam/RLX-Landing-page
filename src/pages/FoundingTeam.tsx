@@ -22,23 +22,11 @@ const founders = [
 
 const FoundingTeam = () => {
   const heroRef = useRef<HTMLDivElement>(null);
-  const valuesRef = useRef<HTMLDivElement>(null);
-  const foundersRef = useRef<HTMLDivElement>(null);
   const finalCTARef = useRef<HTMLDivElement>(null);
 
   // Scroll progress for each section
   const { scrollYProgress: heroProgress } = useScroll({
     target: heroRef,
-    offset: ["start end", "end start"]
-  });
-
-  const { scrollYProgress: valuesProgress } = useScroll({
-    target: valuesRef,
-    offset: ["start end", "end start"]
-  });
-
-  const { scrollYProgress: foundersProgress } = useScroll({
-    target: foundersRef,
     offset: ["start end", "end start"]
   });
 
@@ -51,14 +39,6 @@ const FoundingTeam = () => {
   const heroOpacity = useTransform(heroProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
   const heroY = useTransform(heroProgress, [0, 0.2, 0.8, 1], [100, 0, 0, -100]);
   const heroScale = useTransform(heroProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
-
-  const valuesOpacity = useTransform(valuesProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const valuesY = useTransform(valuesProgress, [0, 0.2, 0.8, 1], [100, 0, 0, -100]);
-  const valuesScale = useTransform(valuesProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
-
-  const foundersOpacity = useTransform(foundersProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const foundersY = useTransform(foundersProgress, [0, 0.2, 0.8, 1], [100, 0, 0, -100]);
-  const foundersScale = useTransform(foundersProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
 
   const finalCTAOpacity = useTransform(finalCTAProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
   const finalCTAY = useTransform(finalCTAProgress, [0, 0.2, 0.8, 1], [100, 0, 0, -100]);
@@ -93,7 +73,7 @@ const FoundingTeam = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1 pt-32 pb-16">
-        {/* Hero Section with Scroll Animation */}
+        {/* Meet the Founders Section */}
         <motion.section 
           ref={heroRef}
           style={{ opacity: heroOpacity, y: heroY, scale: heroScale }}
@@ -106,86 +86,14 @@ const FoundingTeam = () => {
             viewport={{ once: true }}
             className="text-5xl md:text-6xl font-bold text-foreground mb-8 text-center"
           >
-            Mission-Built. Operator-Led.
+            Meet the Founders
           </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-xl text-muted-foreground mb-12 text-center max-w-4xl mx-auto leading-relaxed"
-          >
-            At Red Launch Technologies, we believe a bold mission needs equally bold leadership. Our founding team blends deep technical acumen with operational experience — across defense, AI, and enterprise systems. We're builders who've worked in the real world — not just in code.
-          </motion.p>
-          <motion.p 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="text-lg text-muted-foreground mb-16 text-center max-w-3xl mx-auto"
-          >
-            We've felt the friction of legacy systems and the cost of delayed insights. That's why we're building software designed to move as fast as the mission requires.
-          </motion.p>
-        </motion.section>
-
-        {/* Company Values Section with Scroll Animation */}
-        <motion.section 
-          ref={valuesRef}
-          style={{ opacity: valuesOpacity, y: valuesY, scale: valuesScale }}
-          className="container mx-auto px-6 max-w-6xl mb-20"
-        >
-          <motion.h2 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center"
-          >
-            Our Values
-          </motion.h2>
           <motion.div 
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-10%" }}
-            className="grid md:grid-cols-3 gap-8"
-          >
-            <motion.div variants={cardVariants} className="bg-card/50 rounded-xl p-6 border border-border">
-              <h3 className="text-xl font-semibold text-primary mb-3">Mission First</h3>
-              <p className="text-muted-foreground">Every decision we make serves our core mission: securing critical supply chains and preventing disruptions that could impact national security.</p>
-            </motion.div>
-            <motion.div variants={cardVariants} className="bg-card/50 rounded-xl p-6 border border-border">
-              <h3 className="text-xl font-semibold text-primary mb-3">Operational Excellence</h3>
-              <p className="text-muted-foreground">We build systems that work in the real world, under real pressure, with real consequences. Reliability isn't optional — it's essential.</p>
-            </motion.div>
-            <motion.div variants={cardVariants} className="bg-card/50 rounded-xl p-6 border border-border">
-              <h3 className="text-xl font-semibold text-primary mb-3">Clear Communication</h3>
-              <p className="text-muted-foreground">Complex problems require clear solutions. We translate technical complexity into actionable insights that drive better decisions.</p>
-            </motion.div>
-          </motion.div>
-        </motion.section>
-
-        {/* Founders Section with Scroll Animation */}
-        <motion.section 
-          ref={foundersRef}
-          style={{ opacity: foundersOpacity, y: foundersY, scale: foundersScale }}
-          className="container mx-auto px-6 max-w-6xl mb-20"
-        >
-          <motion.h2 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center"
-          >
-            Founders
-          </motion.h2>
-          <motion.div 
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-10%" }}
-            className="grid md:grid-cols-2 gap-12 mb-16"
+            className="grid md:grid-cols-2 gap-12"
           >
             {founders.map((founder, idx) => (
               <motion.div key={idx} variants={cardVariants} className="bg-card/80 rounded-xl shadow-lg p-8 border border-border hover:neon-glow transition-all duration-300">
