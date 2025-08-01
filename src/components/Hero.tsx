@@ -67,7 +67,7 @@ const Hero = () => {
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-8 leading-tight text-left">
                 Redefining
                 <span className="block text-primary neon-text">
-                  National Supply Chain Security
+                  America's Operational Resilience
                 </span>
               </h1>
               {/* Subheading */}
