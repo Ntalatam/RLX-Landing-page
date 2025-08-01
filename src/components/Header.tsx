@@ -44,7 +44,7 @@ const Header = () => {
         <div className="flex items-center justify-between px-4 md:px-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <img src="https://pbs.twimg.com/media/Gsa-r7yXwAAAgF0?format=jpg&name=medium" alt="RedLaunch Logo" className="w-16 h-16 rounded-sm object-cover group-hover:neon-glow transition-all duration-300" />
+            <img src="/redlaunch-logo.png" alt="RedLaunch Logo" className="w-16 h-16 rounded-sm object-cover group-hover:neon-glow transition-all duration-300" />
             <span className="text-2xl font-extrabold text-foreground group-hover:text-primary transition-colors duration-300">RedLaunch Technologies</span>
           </Link>
 

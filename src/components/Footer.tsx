@@ -9,9 +9,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center space-x-3 group mb-8">
-              <div className="bg-primary/20 p-3 rounded-lg group-hover:neon-glow transition-all duration-300">
-                <Rocket className="w-8 h-8 text-primary" />
-              </div>
+              <img src="/redlaunch-logo.png" alt="RedLaunch Logo" className="w-12 h-12 rounded-sm object-cover group-hover:neon-glow transition-all duration-300" />
               <span className="text-2xl font-extrabold text-foreground group-hover:text-primary transition-colors duration-300">
                 RedLaunch Technologies
               </span>
@@ -37,22 +35,22 @@ const Footer = () => {
             <h3 className="text-xl font-extrabold text-foreground mb-6">Products</h3>
             <ul className="space-y-4">
               <li>
-                <Link to="/technology" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg">
+                <Link to="/products#supplier-risk" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg">
                   Supplier Risk Assessment
                 </Link>
               </li>
               <li>
-                <Link to="/technology" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg">
+                <Link to="/products#geo-tracker" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg">
                   Global Tracker
                 </Link>
               </li>
               <li>
-                <Link to="/technology" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg">
+                <Link to="/products#intel-map" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg">
                   Intelligence Map
                 </Link>
               </li>
               <li>
-                <Link to="/technology" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg">
+                <Link to="/products" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg">
                   Platform Overview
                 </Link>
               </li>
