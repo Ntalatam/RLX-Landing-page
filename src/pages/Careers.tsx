@@ -54,7 +54,7 @@ const Careers = () => (
         {/* Open Roles Section */}
         <div className="mb-20">
           <h2 className="text-3xl font-bold text-white mb-8 text-center">Open Roles</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Software Engineer */}
             <div className="bg-neutral-900 p-6 rounded-xl shadow border-border hover:border-primary transition-all">
               <h3 className="text-2xl font-semibold text-white mb-4">Software Engineer</h3>
@@ -62,14 +62,6 @@ const Careers = () => (
                 <div className="hover:border hover:border-primary p-3 rounded-lg transition-all">
                   <h4 className="font-semibold text-white text-sm mb-1">Full Stack Engineer</h4>
                   <p className="text-neutral-300 text-xs">Build mission-critical applications that power real-time supply chain intelligence. Work with React, Node.js, Python, and cloud-native architectures to deliver software that operates in high-stakes environments.</p>
-                </div>
-                <div className="hover:border hover:border-primary p-3 rounded-lg transition-all">
-                  <h4 className="font-semibold text-white text-sm mb-1">Machine Learning Engineer</h4>
-                  <p className="text-neutral-300 text-xs">Design and deploy AI models for risk assessment, anomaly detection, and predictive analytics. Build systems that process millions of data points to identify threats before they impact operations.</p>
-                </div>
-                <div className="hover:border hover:border-primary p-3 rounded-lg transition-all">
-                  <h4 className="font-semibold text-white text-sm mb-1">Data Engineer</h4>
-                  <p className="text-neutral-300 text-xs">Architect secure, real-time data pipelines that aggregate intelligence from global sources. Build systems that transform raw data into actionable insights for defense and aerospace operations.</p>
                 </div>
               </div>
             </div>
@@ -82,14 +74,6 @@ const Careers = () => (
                   <h4 className="font-semibold text-white text-sm mb-1">Client Solutions Engineer</h4>
                   <p className="text-neutral-300 text-xs">Deploy directly with defense and aerospace clients. Bridge technical implementation with operational reality, ensuring our platform delivers mission-critical value in real-world scenarios.</p>
                 </div>
-                <div className="hover:border hover:border-primary p-3 rounded-lg transition-all">
-                  <h4 className="font-semibold text-white text-sm mb-1">Integration Specialist</h4>
-                  <p className="text-neutral-300 text-xs">Connect our platform with existing defense systems and infrastructure. Work with government clients to ensure seamless deployment and maximum operational impact.</p>
-                </div>
-                <div className="hover:border hover:border-primary p-3 rounded-lg transition-all">
-                  <h4 className="font-semibold text-white text-sm mb-1">Field Operations Engineer</h4>
-                  <p className="text-neutral-300 text-xs">Support critical operations in the field. Provide technical expertise during high-stakes deployments and ensure system reliability when failure isn't an option.</p>
-                </div>
               </div>
             </div>
 
@@ -98,32 +82,24 @@ const Careers = () => (
               <h3 className="text-2xl font-semibold text-white mb-4">Product Developer</h3>
               <div className="space-y-4">
                 <div className="hover:border hover:border-primary p-3 rounded-lg transition-all">
-                  <h4 className="font-semibold text-white text-sm mb-1">Product Designer (UX/UI)</h4>
-                  <p className="text-neutral-300 text-xs">Design interfaces for mission-critical operations. Create intuitive, responsive dashboards that operators can trust in high-pressure situations. Focus on clarity, speed, and reliability.</p>
-                </div>
-                <div className="hover:border hover:border-primary p-3 rounded-lg transition-all">
                   <h4 className="font-semibold text-white text-sm mb-1">Product Manager</h4>
                   <p className="text-neutral-300 text-xs">Own product strategy and roadmap for defense applications. Work directly with operators and engineers to translate real-world challenges into features that matter.</p>
                 </div>
-                <div className="hover:border hover:border-primary p-3 rounded-lg transition-all">
-                  <h4 className="font-semibold text-white text-sm mb-1">DevSecOps Engineer</h4>
-                  <p className="text-neutral-300 text-xs">Secure, deploy, and scale infrastructure in high-trust environments. Build systems that meet government security standards while maintaining operational flexibility.</p>
-                </div>
               </div>
             </div>
+          </div>
 
-            {/* Internships */}
-            <div className="bg-neutral-900 p-6 rounded-xl shadow border-border hover:border-primary transition-all">
-              <h3 className="text-2xl font-semibold text-white mb-4">Internships</h3>
-              <div className="space-y-4">
-                <div className="hover:border hover:border-primary p-3 rounded-lg transition-all">
-                  <h4 className="font-semibold text-white text-sm mb-1">Forward Deployed Intern</h4>
-                  <p className="text-neutral-300 text-xs">Gain hands-on experience deploying technology in real defense environments. Work alongside experienced engineers to understand the intersection of software and national security operations.</p>
-                </div>
-                <div className="hover:border hover:border-primary p-3 rounded-lg transition-all">
-                  <h4 className="font-semibold text-white text-sm mb-1">Product Developer Intern</h4>
-                  <p className="text-neutral-300 text-xs">Contribute to product development for mission-critical applications. Learn to build software that operators depend on in high-stakes environments while working with cutting-edge technology.</p>
-                </div>
+          {/* Internships Section */}
+          <div className="mt-12">
+            <h3 className="text-2xl font-bold text-white mb-6 text-center">Internships</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-neutral-900 p-6 rounded-xl shadow border-border hover:border-primary transition-all">
+                <h4 className="text-xl font-semibold text-white mb-4">Forward Deployed Intern</h4>
+                <p className="text-neutral-300 text-sm">Gain hands-on experience deploying technology in real defense environments. Work alongside experienced engineers to understand the intersection of software and national security operations.</p>
+              </div>
+              <div className="bg-neutral-900 p-6 rounded-xl shadow border-border hover:border-primary transition-all">
+                <h4 className="text-xl font-semibold text-white mb-4">Product Developer Intern</h4>
+                <p className="text-neutral-300 text-sm">Contribute to product development for mission-critical applications. Learn to build software that operators depend on in high-stakes environments while working with cutting-edge technology.</p>
               </div>
             </div>
           </div>
