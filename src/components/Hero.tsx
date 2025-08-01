@@ -131,36 +131,7 @@ const Hero = () => {
           </motion.h2>
 
           
-          {/* Feature Cards with Stagger Animation */}
-          <motion.div 
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-10%" }}
-            className="grid md:grid-cols-3 gap-8 mb-12"
-          >
-            <motion.div 
-              variants={cardVariants}
-              className="bg-card/80 rounded-2xl p-6 shadow border border-border flex flex-col items-center hover:neon-glow hover:border-primary transition-all duration-300"
-            >
-              <span className="text-3xl md:text-4xl font-extrabold text-primary mb-4 neon-text">1. Identify & Monitor</span>
-              <p className="text-muted-foreground text-center text-lg leading-relaxed">Detect supplier weaknesses before they cause mission disruption. From financial instability to compliance gaps — we surface what matters.</p>
-            </motion.div>
-            <motion.div 
-              variants={cardVariants}
-              className="bg-card/80 rounded-2xl p-6 shadow border border-border flex flex-col items-center hover:neon-glow hover:border-primary transition-all duration-300"
-            >
-              <span className="text-3xl md:text-4xl font-extrabold text-primary mb-4 neon-text">2. Visualize Disruptions</span>
-              <p className="text-muted-foreground text-center text-lg leading-relaxed">AI-powered disruption maps that reveal hotspots, chokepoints, and cascading impacts across global networks.</p>
-            </motion.div>
-            <motion.div 
-              variants={cardVariants}
-              className="bg-card/80 rounded-2xl p-6 shadow border border-border flex flex-col items-center hover:neon-glow hover:border-primary transition-all duration-300"
-            >
-              <span className="text-3xl md:text-4xl font-extrabold text-primary mb-4 neon-text">3. Real-Time Decisions</span>
-              <p className="text-muted-foreground text-center text-lg leading-relaxed">Get proactive insights — not just alerts. Automate escalation, rerouting, and resource allocation based on live threat intel.</p>
-            </motion.div>
-          </motion.div>
+
           
                       <motion.p 
               initial={{ opacity: 0, y: 30 }}
