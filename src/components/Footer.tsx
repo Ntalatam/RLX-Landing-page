@@ -17,7 +17,7 @@ const Footer = () => {
               Redefining national supply chain security through real-time AI-powered risk intelligence and visualization tools for defense, aerospace, and critical manufacturing sectors.
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg">
+              <a href="https://www.linkedin.com/company/red-launch/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg">
                 LinkedIn
               </a>
             </div>
