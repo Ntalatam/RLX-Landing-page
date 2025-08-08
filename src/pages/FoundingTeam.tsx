@@ -91,7 +91,7 @@ const FoundingTeam = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-10%" }}
-            className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto"
+            className="flex flex-col md:flex-row justify-center items-center gap-4 max-w-2xl mx-auto"
           >
             {founders.map((founder, idx) => (
               <motion.div key={idx} variants={cardVariants} className="bg-card/80 rounded-xl shadow-lg p-6 border border-border hover:neon-glow transition-all duration-300 max-w-sm mx-auto">
