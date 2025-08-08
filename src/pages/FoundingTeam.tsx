@@ -91,22 +91,22 @@ const FoundingTeam = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-10%" }}
-            className="grid md:grid-cols-2 gap-12"
+            className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto"
           >
             {founders.map((founder, idx) => (
-              <motion.div key={idx} variants={cardVariants} className="bg-card/80 rounded-xl shadow-lg p-4 border border-border hover:neon-glow transition-all duration-300">
-                <div className="flex items-center space-x-4">
-                  <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center overflow-hidden flex-shrink-0">
+              <motion.div key={idx} variants={cardVariants} className="bg-card/80 rounded-xl shadow-lg p-6 border border-border hover:neon-glow transition-all duration-300 max-w-sm mx-auto">
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <div className="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center overflow-hidden flex-shrink-0">
                     {founder.image ? (
-                      <img src={founder.image} alt={founder.name} className="w-16 h-16 object-cover rounded-full" />
+                      <img src={founder.image} alt={founder.name} className="w-24 h-24 object-cover rounded-full" />
                     ) : (
-                      <span className="text-xl font-bold text-primary">{founder.name.split(' ')[0][0]}{founder.name.split(' ')[1][0]}</span>
+                      <span className="text-3xl font-bold text-primary">{founder.name.split(' ')[0][0]}{founder.name.split(' ')[1][0]}</span>
                     )}
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-foreground mb-1">{founder.name}</h3>
-                    <p className="text-primary font-medium mb-1 neon-text">{founder.role}</p>
-                    <a href={founder.linkedin} target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80 transition-colors inline-block text-sm">Connect on LinkedIn</a>
+                  <div className="flex flex-col items-center space-y-2">
+                    <h3 className="text-xl font-semibold text-foreground">{founder.name}</h3>
+                    <p className="text-primary font-medium neon-text">{founder.role}</p>
+                    <a href={founder.linkedin} target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80 transition-colors inline-block">Connect on LinkedIn</a>
                   </div>
                 </div>
               </motion.div>
