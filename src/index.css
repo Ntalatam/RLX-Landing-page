@@ -1,6 +1,10 @@
+/* stylelint-disable at-rule-no-unknown */
+/* eslint-disable */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* eslint-enable */
+/* stylelint-enable at-rule-no-unknown */
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
@@ -13,7 +17,7 @@ html {
 
 @layer base {
   :root {
-    /* RedLaunch Color Palette - Defense Tech Black & Neon Red */
+    /* Red Launch Color Palette - Defense Tech Black & Neon Red */
     --background: 0 0% 4%; /* true black #0A0A0A */
     --foreground: 0 0% 100%; /* white #FFFFFF */
 

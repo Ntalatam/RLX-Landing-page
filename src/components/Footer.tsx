@@ -8,9 +8,9 @@ const Footer = () => {
           {/* Company Info */}
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center space-x-3 group mb-8">
-              <img src="/images/rlx-logo.png" alt="RedLaunch Logo" className="w-12 h-12 object-contain group-hover:neon-glow transition-all duration-300" />
+              <img src="/images/rlx-logo.png" alt="Red Launch Logo" className="w-12 h-12 object-contain group-hover:neon-glow transition-all duration-300" />
               <span className="text-2xl font-extrabold text-foreground group-hover:text-primary transition-colors duration-300">
-                RedLaunch Technologies
+                Red Launch Technologies
               </span>
             </Link>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl leading-relaxed">
@@ -83,7 +83,7 @@ const Footer = () => {
         <div className="border-t border-border pt-12">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
             <div className="text-muted-foreground text-lg">
-              © 2025 RedLaunch Technologies. All rights reserved.
+              © 2025 Red Launch Technologies. All rights reserved.
             </div>
             <div className="flex space-x-8">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg">
