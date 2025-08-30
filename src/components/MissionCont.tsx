@@ -1,153 +1,206 @@
-import React, { useEffect, useRef, useState } from 'react';
-import './SupplyChain.css';
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-const nodeNames = [
-  'Logistics HQ',
-  'Factory',
-  'Port',
-  'Depot',
-  'Forward Base'
+const NODES = 6;
+const CONTAINER_SIZE = 400;
+const CENTER = CONTAINER_SIZE / 2;
+const NODE_SIZE = 56;
+const LINE_LENGTH = 145;
+
+const nodes = [
+  { label: "Depot", icon: "🏢" },
+  { label: "Ammunition", icon: "💣" },
+  { label: "FOB", icon: "🪖" },
+  { label: "Convoy", icon: "🚚" },
+  { label: "Combat Zone", icon: "🎯" },
+  { label: "Resupply", icon: "📦" },
 ];
 
-const nodeIcons = ['📡', '🏭', '⚓', '📦', '🛡️'];
+const getNodePosition = (idx: number) => {
+  const angle = (360 / NODES) * idx - 90; // Start at top
+  const rad = (angle * Math.PI) / 180;
+  const x = CENTER + LINE_LENGTH * Math.cos(rad) - NODE_SIZE / 2;
+  const y = CENTER + LINE_LENGTH * Math.sin(rad) - NODE_SIZE / 2;
+  return { x, y };
+};
 
-// Main and alternate SVG paths
-const mainPath =
-  "M 60 200 Q 180 60 300 140 Q 420 220 540 100 Q 660 0 780 180";
-const altPath =
-  "M 60 200 Q 180 60 300 140 Q 420 60 540 140 Q 660 0 780 180"; // detour at Depot
+const MissionCont: React.FC = () => {
+  const [activeNode, setActiveNode] = useState(0);
 
-const obstacleNodeIndex = 3; // e.g., obstacle at 'Depot'
-
-const RealTimeVisibilityWithDetour: React.FC = () => {
-  const mainPathRef = useRef<SVGPathElement>(null);
-  const altPathRef = useRef<SVGPathElement>(null);
-  const [dotPos, setDotPos] = useState({ x: 0, y: 0 });
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [tValues, setTValues] = useState<number[]>([]);
-  const [useAlt, setUseAlt] = useState(false);
-  const [obstacle, setObstacle] = useState(false);
-
-  // Simulate obstacle appearing/disappearing every 6 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setObstacle((prev) => !prev);
-    }, 6000);
+      setActiveNode((prev) => (prev + 1) % NODES);
+    }, 1600);
     return () => clearInterval(interval);
   }, []);
 
-  // Calculate tValues for both paths
-  useEffect(() => {
-    const pathEl = useAlt && altPathRef.current ? altPathRef.current : mainPathRef.current;
-    if (pathEl) {
-      const length = pathEl.getTotalLength();
-      const vals = nodeNames.map((_, i) =>
-        (i / (nodeNames.length - 1)) * length
-      );
-      setTValues(vals);
-      const { x, y } = pathEl.getPointAtLength(vals[0]);
-      setDotPos({ x, y });
-    }
-  }, [useAlt]);
-
-  // Animation logic
-  useEffect(() => {
-    const pathEl = useAlt && altPathRef.current ? altPathRef.current : mainPathRef.current;
-    if (!pathEl || tValues.length === 0) return;
-
-    const start = tValues[currentIndex];
-    const nextIndex = (currentIndex + 1) % nodeNames.length;
-    const end = tValues[nextIndex];
-    const duration = 1000;
-    const startTime = performance.now();
-
-    const animate = (now: number) => {
-      const elapsed = now - startTime;
-      const t = Math.min(elapsed / duration, 1);
-      const pos = pathEl.getPointAtLength(start + (end - start) * t);
-      setDotPos({ x: pos.x, y: pos.y });
-      if (t < 1) {
-        requestAnimationFrame(animate);
-      } else {
-        // If obstacle is active and we're at the node before the obstacle, switch to alt path
-        if (obstacle && currentIndex === obstacleNodeIndex - 1) {
-          setUseAlt(true);
-        }
-        // If we just passed the obstacle, return to main path
-        if (useAlt && currentIndex === obstacleNodeIndex) {
-          setUseAlt(false);
-        }
-        setCurrentIndex(nextIndex);
-      }
-    };
-
-    requestAnimationFrame(animate);
-    // eslint-disable-next-line
-  }, [currentIndex, tValues, useAlt, obstacle]);
-
   return (
-    <div className="supply-chain-animation">
-      <svg viewBox="0 0 840 260" className="sc-road-svg">
-        {/* Main path */}
-        <path ref={mainPathRef} d={mainPath} className="sc-road-path rtv-path" style={{ opacity: useAlt ? 0.3 : 1 }} />
-        {/* Alternate path */}
-        <path ref={altPathRef} d={altPath} className="sc-road-path rtv-path" style={{ opacity: useAlt ? 1 : 0.3, strokeDasharray: useAlt ? "8 4" : "none" }} />
-        {tValues.map((len, i) => {
-          const pathEl = useAlt && altPathRef.current ? altPathRef.current : mainPathRef.current;
-          if (!pathEl) return null;
-          const { x, y } = pathEl.getPointAtLength(len);
-          return (
-            <g key={i}>
-              <circle
-                cx={x}
-                cy={y}
-                r={16}
-                className={
-                  "sc-checkpoint rtv-node" +
-                  (currentIndex === i ? " active" : "")
-                }
+    <div className="relative w-full h-[440px] flex flex-col items-center">
+      <div className="relative" style={{ width: CONTAINER_SIZE, height: CONTAINER_SIZE }}>
+        {/* SVG lines connecting nodes */}
+        <svg
+          width={CONTAINER_SIZE}
+          height={CONTAINER_SIZE}
+          className="absolute left-0 top-0 pointer-events-none"
+          style={{ zIndex: 0 }}
+        >
+          {nodes.map((_, idx) => {
+            const from = getNodePosition(idx);
+            const to = getNodePosition((idx + 1) % NODES);
+            return (
+              <motion.line
+                key={idx}
+                x1={from.x + NODE_SIZE / 2}
+                y1={from.y + NODE_SIZE / 2}
+                x2={to.x + NODE_SIZE / 2}
+                y2={to.y + NODE_SIZE / 2}
+                stroke="#38bdf8"
+                strokeWidth={4}
+                strokeLinecap="round"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ delay: 0.2 + idx * 0.12, duration: 0.5, type: "spring" }}
+                opacity={0.7}
               />
-              {/* Obstacle icon */}
-              {obstacle && i === obstacleNodeIndex && (
-                <text
-                  x={x}
-                  y={y - 26}
-                  textAnchor="middle"
-                  className="sc-forecast-icon"
-                  style={{ fontSize: 28 }}
-                >
-                  🚧
-                </text>
-              )}
-              <text
-                x={x}
-                y={y}
-                textAnchor="middle"
-                className="sc-node-icon"
-                style={{ fontSize: 22 }}
+            );
+          })}
+        </svg>
+
+        {/* Nodes */}
+        {nodes.map((node, idx) => {
+          const { x, y } = getNodePosition(idx);
+          const isActive = idx === activeNode;
+          return (
+            <motion.div
+              key={node.label}
+              className="absolute flex flex-col items-center"
+              style={{
+                left: x,
+                top: y,
+                width: NODE_SIZE,
+                height: NODE_SIZE,
+                zIndex: 2,
+              }}
+              animate={{
+                scale: isActive ? 1.18 : 1,
+                boxShadow: isActive
+                  ? "0 0 24px #38bdf8cc"
+                  : "0 0 10px #0ea5e988",
+              }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            >
+              <motion.div
+                className="rounded-full flex items-center justify-center"
+                style={{
+                  width: NODE_SIZE,
+                  height: NODE_SIZE,
+                  background: isActive ? "#38bdf8" : "#0ea5e9",
+                  border: isActive ? "3px solid #fff" : "2px solid #fff",
+                  fontSize: 28,
+                  color: "#fff",
+                  boxShadow: isActive
+                    ? "0 0 24px #38bdf8cc"
+                    : "0 0 10px #0ea5e988",
+                  position: "relative",
+                }}
+                animate={{
+                  scale: isActive ? [1, 1.13, 1] : 1,
+                }}
+                transition={{
+                  repeat: isActive ? Infinity : 0,
+                  duration: 1.2,
+                }}
               >
-                {nodeIcons[i]}
-              </text>
-              <text
-                x={x}
-                y={y + 34}
-                textAnchor="middle"
-                className="sc-label"
+                {node.icon}
+              </motion.div>
+              <span
+                style={{
+                  marginTop: 8,
+                  fontSize: 13,
+                  color: "#fff",
+                  fontWeight: 600,
+                  letterSpacing: 1,
+                  textShadow: "0 2px 8px #000a",
+                  textTransform: "uppercase",
+                  fontFamily: "'Oswald', 'Roboto Condensed', Arial, sans-serif",
+                  textAlign: "center",
+                  width: NODE_SIZE + 20,
+                }}
               >
-                {nodeNames[i]}
-              </text>
-            </g>
+                {node.label}
+              </span>
+            </motion.div>
           );
         })}
-        <circle
-          cx={dotPos.x}
-          cy={dotPos.y}
-          r={10}
-          className="sc-truck-dot rtv-dot"
-        />
-      </svg>
+
+        {/* Animated convoy/truck moving between nodes */}
+        <AnimatePresence>
+          <motion.div
+            key={activeNode}
+            className="absolute"
+            initial={{ opacity: 0, scale: 0.7 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.7 }}
+            transition={{ duration: 0.4 }}
+            style={{
+              left: getNodePosition(activeNode).x + NODE_SIZE / 2 - 18,
+              top: getNodePosition(activeNode).y + NODE_SIZE / 2 - 18,
+              width: 36,
+              height: 36,
+              zIndex: 10,
+              pointerEvents: "none",
+            }}
+          >
+            <motion.span
+              className="text-3xl"
+              animate={{
+                scale: [1, 1.18, 1],
+                rotate: [0, 10, -10, 0],
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 1.2,
+              }}
+              style={{
+                display: "inline-block",
+                filter: "drop-shadow(0 0 8px #38bdf8cc)",
+              }}
+            >
+              🚚
+            </motion.span>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Central command node */}
+        <motion.div
+          className="absolute rounded-full flex justify-center items-center z-20"
+          style={{
+            width: NODE_SIZE + 44,
+            height: NODE_SIZE + 44,
+            left: CENTER - (NODE_SIZE + 44) / 2,
+            top: CENTER - (NODE_SIZE + 44) / 2,
+            background: "#38bdf8",
+            boxShadow: "0 0 36px rgba(56,189,248,0.7)",
+            border: "4px solid #fff",
+          }}
+          animate={{
+            scale: [1, 1.08, 1],
+            boxShadow: [
+              "0 0 36px rgba(56,189,248,0.7)",
+              "0 0 48px rgba(56,189,248,1)",
+              "0 0 36px rgba(56,189,248,0.7)",
+            ],
+          }}
+          transition={{ repeat: Infinity, duration: 2.5 }}
+        >
+          <div className="text-[2.3rem] text-[#0a192f]">🛰️</div>
+        </motion.div>
+      </div>
+      <div className="absolute bottom-5 bg-[rgba(16,24,40,0.7)] px-5 py-2 rounded-full text-[#38bdf8] text-base font-semibold border border-[#38bdf8] shadow-lg">
+        Real-Time Visibility & Situational Awareness
+      </div>
     </div>
   );
 };
 
-export default RealTimeVisibilityWithDetour;
+export default MissionCont;

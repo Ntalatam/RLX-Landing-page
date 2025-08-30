@@ -16,17 +16,16 @@ interface SupplyChainAnimationProps {
 }
 
 const roadPath =
-  "M 40 220 L 140 80 L 240 220 L 340 80 L 440 220 L 540 80 L 640 220 L 740 80";
-// Default suppliers with predictive analytics forecast
+  "M40 220 C90 120, 190 120, 240 220 S390 320, 440 220 S590 120, 640 220 S740 320, 840 220";// Default suppliers with predictive analytics forecast
 const defaultSuppliers: SupplierNode[] = [
-  { id: '1', name: 'Raw Materials', riskLevel: 'medium', status: 'verified', forecast: 'normal' },
-  { id: '2', name: 'Parts Supplier', riskLevel: 'high', status: 'verified', forecast: 'warning' },
-  { id: '3', name: 'Manufacturing', riskLevel: 'medium', status: 'verified', forecast: 'normal' },
-  { id: '4', name: 'Assembly', riskLevel: 'low', status: 'verified', forecast: 'normal' },
-  { id: '5', name: 'Quality Check', riskLevel: 'low', status: 'verified', forecast: 'normal' },
-  { id: '6', name: 'Packaging', riskLevel: 'medium', status: 'verified', forecast: 'warning' },
-  { id: '7', name: 'Distribution', riskLevel: 'medium', status: 'pending', forecast: 'critical' },
-  { id: '8', name: 'Retail', riskLevel: 'medium', status: 'pending', forecast: 'normal' }
+  { id: '1', name: 'Depot', riskLevel: 'medium', status: 'verified', forecast: 'normal' },
+  { id: '2', name: 'Ammunition Storage', riskLevel: 'high', status: 'verified', forecast: 'warning' },
+  { id: '3', name: 'Logistics Hub', riskLevel: 'medium', status: 'verified', forecast: 'normal' },
+  { id: '4', name: 'Forward Operating Base', riskLevel: 'low', status: 'verified', forecast: 'normal' },
+  { id: '5', name: 'Field Maintenance', riskLevel: 'low', status: 'verified', forecast: 'normal' },
+  { id: '6', name: 'Convoy Staging', riskLevel: 'medium', status: 'verified', forecast: 'warning' },
+  { id: '7', name: 'Combat Zone', riskLevel: 'medium', status: 'pending', forecast: 'critical' },
+  { id: '8', name: 'Unit Resupply', riskLevel: 'medium', status: 'pending', forecast: 'normal' }
 ];
 
 const SupplyChainAnimation: React.FC<SupplyChainAnimationProps> = ({
@@ -112,7 +111,7 @@ const SupplyChainAnimation: React.FC<SupplyChainAnimationProps> = ({
   return (
     <div className={`supply-chain-animation ${className}`}>
      
-      <svg viewBox="0 0 900 260" className="sc-road-svg">
+      <svg viewBox="0 0 900 400" className="sc-road-svg">
         <path ref={pathRef} d={roadPath} className="sc-road-path" />
         {tValues.map((len, i) => {
           if (!pathRef.current) return null;

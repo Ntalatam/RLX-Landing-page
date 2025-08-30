@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
-import RealTimeVisibilityWithDetour from "./MissionCont";
+import MissionCont from "./MissionCont";
 import SupplyChainAnimation from "./SupplyChain"
-import DDILResilienceSimple from "./StrategicAutonomy";
+import StrategicAutonomy from "./StrategicAutonomy";
 import { Link } from "react-router-dom";
 import { ShieldCheck, Factory, Server, Truck } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -147,7 +147,7 @@ Our Supplier Intelligence platform for Defense enables Real-Time optimization of
 >
   {/* Real-Time Visibility */}
   <div className="w-full flex flex-col items-center justify-center py-12">
-    <RealTimeVisibilityWithDetour />
+    <MissionCont />
     <h3 className="text-2xl font-semibold text-foreground mt-6 mb-2 text-center">
       Real-Time Visibility & Situational Awareness
     </h3>
@@ -170,7 +170,7 @@ Our Supplier Intelligence platform for Defense enables Real-Time optimization of
 
   {/* DDIL Resilience */}
   <div className="w-full flex flex-col items-center justify-center py-12">
-    <DDILResilienceSimple />
+    <StrategicAutonomy />
     <div className="w-14 h-14 text-amber-400 drop-shadow-[0_0_12px_rgba(255,195,0,0.7)] mb-2 mt-6" />
     <h3 className="text-2xl font-semibold text-foreground mb-2 text-center">
       Disrupted, Degraded, Intermittent, & Low-Bandwidth (DDIL) Resilience

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import emailjs from "emailjs-com";
 import { ArrowRight } from "lucide-react";
 
 const SERVICE_ID = "service_le6pwxq";
@@ -22,20 +23,17 @@ const Contact = () => {
 
   if (!formRef.current) return;
 
-  const formData = new FormData(formRef.current);
-  const data = Object.fromEntries(formData.entries());
-
   try {
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-    if (!res.ok) throw new Error("Failed to send message");
+    await emailjs.sendForm(
+      SERVICE_ID,
+      TEMPLATE_ID,
+      formRef.current,
+      USER_ID
+    );
     setSent(true);
     setLoading(false);
     formRef.current?.reset();
-  } catch {
+  } catch (err) {
     setError("Failed to send message. Please try again.");
     setLoading(false);
   }
