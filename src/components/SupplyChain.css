@@ -1,0 +1,173 @@
+.supply-chain-animation {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 0;
+}
+
+
+.sc-title {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.2em;
+  text-align: center;
+  letter-spacing: -1px;
+}
+/* Real-Time Visibility */
+.rtv-path {
+  stroke: #3ca0ff;
+}
+.rtv-node {
+  fill: #fff;
+  stroke: #3ca0ff;
+}
+.rtv-node.active {
+  fill: #3ca0ff;
+  stroke: #fff;
+  filter: drop-shadow(0 0 8px #3ca0ff88);
+}
+.rtv-dot {
+  fill: #3ca0ff;
+  stroke: #fff;
+  filter: drop-shadow(0 0 8px #3ca0ff88);
+}
+
+/* Predictive Analytics */
+.pa-path {
+  stroke: #3cff7a;
+}
+.pa-node {
+  fill: #fff;
+  stroke: #3cff7a;
+}
+.pa-node.active {
+  fill: #3cff7a;
+  stroke: #fff;
+  filter: drop-shadow(0 0 8px #3cff7a88);
+}
+.pa-dot {
+  fill: #3cff7a;
+  stroke: #fff;
+  filter: drop-shadow(0 0 8px #3cff7a88);
+}
+
+/* DDIL Resilience */
+.ddil-path {
+  stroke: #FFC300;
+}
+.ddil-node {
+  fill: #fff;
+  stroke: #FFC300;
+}
+.ddil-node.active {
+  fill: #FFC300;
+  stroke: #fff;
+  filter: drop-shadow(0 0 8px #FFC30088);
+}
+.ddil-dot {
+  fill: #FFC300;
+  stroke: #fff;
+  filter: drop-shadow(0 0 8px #FFC30088);
+}
+.ddil-node.ddil-degraded {
+  stroke: #FFD600;
+  stroke-dasharray: 4 2;
+  animation: flicker 1s infinite;
+}
+.ddil-node.ddil-offline {
+  stroke: #FF3C3C;
+  stroke-dasharray: 2 2;
+  opacity: 0.5;
+  animation: flicker 0.5s infinite;
+}
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Node icon style */
+.sc-node-icon {
+  pointer-events: none;
+  user-select: none;
+  dominant-baseline: middle;
+}
+
+.sc-subtitle {
+  color: #b2ffb2;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 1.5em;
+  font-weight: 500;
+}
+
+.sc-forecast-icon {
+  font-size: 1.6rem;
+  pointer-events: none;
+  user-select: none;
+  text-shadow: 0 2px 8px #000, 0 0 2px #000;
+}
+
+.sc-checkpoint.forecast-warning {
+  stroke: #ffb13c !important;
+  stroke-width: 5;
+  animation: forecastWarningPulse 1.2s infinite;
+}
+@keyframes forecastWarningPulse {
+  0%, 100% { box-shadow: 0 0 0 0 #ffb13c55; }
+  50% { box-shadow: 0 0 16px 6px #ffb13c55; }
+}
+
+.sc-checkpoint.forecast-critical {
+  stroke: #ff3c3c !important;
+  stroke-width: 6;
+  animation: forecastCriticalPulse 1.2s infinite;
+}
+@keyframes forecastCriticalPulse {
+  0%, 100% { box-shadow: 0 0 0 0 #ff3c3c55; }
+  50% { box-shadow: 0 0 20px 10px #ff3c3c55; }
+}
+
+.sc-road-svg {
+  width: 100%;
+  height: 260px;
+  display: block;
+}
+.sc-road-path {
+  fill: none;
+  stroke: #222;
+  stroke-width: 18;
+  opacity: 0.85;
+  filter: drop-shadow(0 6px 16px #0006);
+}
+.sc-checkpoint {
+  fill: #fff;
+  stroke: #222;
+  stroke-width: 4;
+  opacity: 1;
+  transition: stroke 0.3s, fill 0.3s;
+}
+.sc-checkpoint.active {
+  fill: #222;
+  stroke: #fff;
+}
+.sc-label {
+  font-size: 1rem;
+  fill: #fff;
+  font-weight: 600;
+  pointer-events: none;
+  text-shadow: 0 2px 8px #000, 0 0 2px #000;
+}
+.sc-truck-dot {
+  fill: #fff;
+  stroke: #111;
+  stroke-width: 4;
+  filter: drop-shadow(0 2px 8px #0008);
+  transition: cx 0.7s cubic-bezier(.4,2,.6,1), cy 0.7s cubic-bezier(.4,2,.6,1);
+}
+
+.sc-checkpoint.reached {
+  fill: #27ae60 !important;
+  stroke: #fff !important;
+  transition: fill 0.3s, stroke 0.3s;
+}

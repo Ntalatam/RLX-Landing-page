@@ -18,10 +18,12 @@ html {
 @layer base {
   :root {
     /* Red Launch Color Palette - Defense Tech Black & Neon Red */
-    --background: 0 0% 4%; /* true black #0A0A0A */
+    --bg-color:#101018;
+    --background: 0 0% 18%; /* true black #0A0A0A */
     --foreground: 0 0% 100%; /* white #FFFFFF */
 
     --card: 0 0% 12%; /* dark gray #1F1F1F */
+    --card-bg: #181828
     --card-foreground: 0 0% 100%; /* white #FFFFFF */
 
     --popover: 0 0% 12%; /* dark gray #1F1F1F */
@@ -38,6 +40,7 @@ html {
 
     --accent: 0 100% 65%; /* accent red #FF1A4B */
     --accent-foreground: 0 0% 100%; /* white #FFFFFF */
+    --accent-glow: 0 0 8px #ff3c6e88, 0 0 16px #ff3c6e44;
 
     --destructive: 0 100% 60%; /* neon red #FF0033 */
     --destructive-foreground: 0 0% 100%; /* white #FFFFFF */
@@ -60,7 +63,8 @@ html {
 
   .dark {
     /* Same colors for dark mode consistency */
-    --background: 0 0% 4%; /* true black #0A0A0A */
+     --bg-color:#101018;
+    --background: 0 0% 18%; /* true black #0A0A0A */
     --foreground: 0 0% 100%; /* white #FFFFFF */
 
     --card: 0 0% 12%; /* dark gray #1F1F1F */
@@ -78,8 +82,10 @@ html {
     --muted: 0 0% 12%; /* dark gray #1F1F1F */
     --muted-foreground: 204 0% 80%; /* light gray #CCCCCC */
 
-    --accent: 0 100% 65%; /* accent red #FF1A4B */
-    --accent-foreground: 0 0% 100%; /* white #FFFFFF */
+    
+
+--accent: #ff3c6e;    --accent-foreground: 0 0% 100%; /* white #FFFFFF */
+--accent-glow: 0 0 8px #ff3c6e88, 0 0 16px #ff3c6e44;
 
     --destructive: 0 100% 60%; /* neon red #FF0033 */
     --destructive-foreground: 0 0% 100%; /* white #FFFFFF */
@@ -101,16 +107,20 @@ html {
 
 @layer base {
   * {
-    @apply border-border;
+     @apply border-border;
+      border-color: hsl(var(--border));
+
   }
 
   body {
     @apply text-foreground font-sans;
-    background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/1400/e8490e49740753.5608692c56564.png');
+    background: var(--bg-color);
+
+    /*background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/1400/e8490e49740753.5608692c56564.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
     background-color: hsl(var(--background));
   }
   

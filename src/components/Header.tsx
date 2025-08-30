@@ -21,103 +21,81 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md  bg-transparent backdrop-blur-none">
       <div className="w-full py-6">
         <div className="flex items-center justify-between px-2 md:px-8">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-                          <img src="/images/rlx-logo.png" alt="Red Launch Logo" className="w-16 h-16 object-contain group-hover:neon-glow transition-all duration-300" />
-            <span className="text-2xl font-extrabold text-foreground group-hover:text-primary transition-colors duration-300">Red Launch Technologies</span>
+          <Link to="/" className="flex items-center space-x-3 group">
+            <div className="bg-neutral-900 rounded-full p-2 shadow-lg flex items-center justify-center">
+              <img
+                src="/images/red-launch-logo-FINAL-2.png"
+                alt="Red Launch Logo"
+                className="w-16 h-16 object-contain group-hover:neon-glow transition-all duration-300"
+                style={{
+                  backgroundColor: "transparent",
+                  borderRadius: "9999px",
+                }}
+              />
+            </div>
+            <span className="text-2xl font-extrabold text-foreground group-hover:text-primary transition-colors duration-300">
+              Red Launch
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-10">
-            {navItems.map((item) => {
-              if (item.label === "Products") {
-                return (
-                  <Link
-                    key={item.label}
-                    to={item.href}
-                    className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg font-semibold"
-                  >
-                    {item.label}
-                  </Link>
-                );
-              } else if (item.label === "Company") {
-                return (
-                  <DropdownMenu key={item.label} open={openDropdown === item.label} onOpenChange={(open) => setOpenDropdown(open ? item.label : null)}>
-                    <DropdownMenuTrigger asChild>
-                      <span
-                        className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg font-semibold flex items-center cursor-pointer group"
-                        onMouseEnter={() => setOpenDropdown(item.label)}
-                        onMouseLeave={() => setOpenDropdown(null)}
-                      >
-                        {item.label}
-                        <ChevronDown className="ml-2 w-5 h-5 group-hover:text-primary transition-colors duration-200" />
-                      </span>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent
-                      align="start"
-                      className="bg-card border-border"
-                      onMouseEnter={() => setOpenDropdown(item.label)}
-                      onMouseLeave={() => setOpenDropdown(null)}
-                    >
-                      <DropdownMenuItem asChild className="hover:bg-accent hover:text-accent-foreground text-base">
-                        <Link to="/founding-team">Founding Team</Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem asChild className="hover:bg-accent hover:text-accent-foreground text-base">
-                        <Link to="/mission">Mission</Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem asChild className="hover:bg-accent hover:text-accent-foreground text-base">
-                        <Link to="/careers">Careers</Link>
-                      </DropdownMenuItem>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                );
-              } else if (item.label === "Media") {
-                return (
-                  <DropdownMenu key={item.label} open={openDropdown === item.label} onOpenChange={(open) => setOpenDropdown(open ? item.label : null)}>
-                    <DropdownMenuTrigger asChild>
-                      <Link
-                        to={item.href}
-                        className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg font-semibold flex items-center cursor-pointer group"
-                        onMouseEnter={() => setOpenDropdown(item.label)}
-                        onMouseLeave={() => setOpenDropdown(null)}
-                      >
-                        {item.label}
-                        <ChevronDown className="ml-2 w-5 h-5 group-hover:text-primary transition-colors duration-200" />
-                      </Link>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent
-                      align="start"
-                      className="bg-card border-border"
-                      onMouseEnter={() => setOpenDropdown(item.label)}
-                      onMouseLeave={() => setOpenDropdown(null)}
-                    >
-                      <DropdownMenuItem className="hover:bg-accent hover:text-accent-foreground text-base">Press Releases</DropdownMenuItem>
-                      <DropdownMenuItem className="hover:bg-accent hover:text-accent-foreground text-base">Media Coverage</DropdownMenuItem>
-                      <DropdownMenuItem className="hover:bg-accent hover:text-accent-foreground text-base">Blog</DropdownMenuItem>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                );
-              } else {
-                return (
-                  <Link
-                    key={item.label}
-                    to={item.href}
-                    className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg font-semibold flex items-center"
-                  >
-                    {item.label}
-                  </Link>
-                );
-              }
-            })}
-          </nav>
+<nav className="hidden md:flex items-center space-x-10 ml-auto">
+  <Link
+    to="/products"
+    className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg font-semibold"
+  >
+    Product
+  </Link>
+  <Link
+    to="/company"
+    className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg font-semibold"
+  >
+    Company
+  </Link>
+  <Link
+    to="/careers"
+    className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg font-semibold"
+  >
+    Careers
+  </Link>
+  <DropdownMenu key="Media" open={openDropdown === "Media"} onOpenChange={(open) => setOpenDropdown(open ? "Media" : null)}>
+    <DropdownMenuTrigger asChild>
+      <span
+        className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg font-semibold flex items-center cursor-pointer group"
+        onMouseEnter={() => setOpenDropdown("Media")}
+        onMouseLeave={() => setOpenDropdown(null)}
+      >
+        Media
+        <ChevronDown className="ml-2 w-5 h-5 group-hover:text-primary transition-colors duration-200" />
+      </span>
+    </DropdownMenuTrigger>
+    <DropdownMenuContent
+      align="start"
+      className="bg-card border-border"
+      onMouseEnter={() => setOpenDropdown("Media")}
+      onMouseLeave={() => setOpenDropdown(null)}
+    >
+      <DropdownMenuItem asChild className="hover:bg-accent hover:text-accent-foreground text-base">
+        <Link to="/coming-soon">Press Releases</Link>
+      </DropdownMenuItem>
+      <DropdownMenuItem asChild className="hover:bg-accent hover:text-accent-foreground text-base">
+        <Link to="/coming-soon">Media Coverage</Link>
+      </DropdownMenuItem>
+      <DropdownMenuItem asChild className="hover:bg-accent hover:text-accent-foreground text-base">
+        <Link to="/coming-soon">Blog</Link>
+      </DropdownMenuItem>
+    </DropdownMenuContent>
+  </DropdownMenu>
+</nav>
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-6">
             <Link to="/contact">
-              <Button variant="default" size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 neon-glow px-8 py-6 text-lg font-bold">
+              <Button variant="default" size="lg" className="ml-8 bg-primary text-primary-foreground hover:bg-primary/90 neon-glow px-8 py-6 text-lg font-bold">
                 Get Started
               </Button>
             </Link>
@@ -135,27 +113,68 @@ const Header = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden mt-6 pb-6 border-t border-border px-4">
-            <nav className="flex flex-col space-y-4 pt-6">
-              {navItems.map((item) => (
-                <Link
-                  key={item.label}
-                  to={item.href}
-                  className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg font-semibold py-3"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <div className="pt-4">
-                <Button variant="default" size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 neon-glow px-8 py-6 text-lg font-bold">
-                  Get Started
-                </Button>
-              </div>
-            </nav>
-          </div>
-        )}
+{isMenuOpen && (
+  <div className="md:hidden fixed inset-0 z-50 bg-black/90">
+    <nav className="flex flex-col space-y-4 pt-24 px-6">
+      <Link
+        to="/products"
+        className="text-white text-xl font-semibold py-3"
+        onClick={() => setIsMenuOpen(false)}
+      >
+        Product
+      </Link>
+      <Link
+        to="/company"
+        className="text-white text-xl font-semibold py-3"
+        onClick={() => setIsMenuOpen(false)}
+      >
+        Company
+      </Link>
+      <Link
+        to="/careers"
+        className="text-white text-xl font-semibold py-3"
+        onClick={() => setIsMenuOpen(false)}
+      >
+        Careers
+      </Link>
+      {/* Media with subpages */}
+      <div>
+        <span className="text-white text-xl font-semibold py-3 block">Media</span>
+        <Link
+          to="/press-releases"
+          className="text-white text-lg pl-4 py-2 block"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          Press Releases
+        </Link>
+        <Link
+          to="/media-coverage"
+          className="text-white text-lg pl-4 py-2 block"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          Media Coverage
+        </Link>
+        <Link
+          to="/blog"
+          className="text-white text-lg pl-4 py-2 block"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          Blog
+        </Link>
+      </div>
+      {/* CTA Button */}
+      <Link to="/contact" className="mt-6" onClick={() => setIsMenuOpen(false)}>
+        <Button
+          variant="default"
+          size="lg"
+          className="w-full bg-primary text-primary-foreground hover:bg-primary/90 neon-glow px-8 py-6 text-lg font-bold"
+        >
+          Get Started
+        </Button>
+      </Link>
+    </nav>
+  </div>
+)}
       </div>
     </header>
   );

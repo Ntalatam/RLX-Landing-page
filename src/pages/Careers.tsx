@@ -113,15 +113,7 @@ const Careers = () => {
             style={{ opacity: openRolesOpacity, y: openRolesY, scale: openRolesScale }}
             className="mb-20"
           >
-            <motion.h2 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-3xl font-bold text-white mb-8 text-center"
-            >
-              Open Positions
-            </motion.h2>
+            
             <motion.div 
               variants={containerVariants}
               initial="hidden"
@@ -130,70 +122,20 @@ const Careers = () => {
               className="grid grid-cols-1 md:grid-cols-3 gap-8"
             >
               {/* Software Engineer */}
-              <motion.div variants={cardVariants} className="bg-neutral-900 p-6 rounded-xl shadow border-border hover:border-primary transition-all">
-                <h3 className="text-2xl font-semibold text-white mb-4">Software Engineer</h3>
-                <div className="space-y-4">
-                  <div className="hover:border hover:border-primary p-3 rounded-lg transition-all">
-                    <h4 className="font-semibold text-white text-sm mb-1">Full Stack Engineer</h4>
-                    <p className="text-neutral-300 text-xs">Build systems that operators trust in combat. React, Node.js, Python. No room for error.</p>
-                  </div>
-                </div>
-              </motion.div>
+              
 
               {/* Forward Deployed Engineer */}
-              <motion.div variants={cardVariants} className="bg-neutral-900 p-6 rounded-xl shadow border-border hover:border-primary transition-all">
-                <h3 className="text-2xl font-semibold text-white mb-4">Forward Deployed Engineer</h3>
-                <div className="space-y-4">
-                  <div className="hover:border hover:border-primary p-3 rounded-lg transition-all">
-                    <h4 className="font-semibold text-white text-sm mb-1">Client Solutions Engineer</h4>
-                    <p className="text-neutral-300 text-xs">Deploy with defense clients. Bridge tech and reality. Mission-critical value.</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Open Application */}
-              <motion.div variants={cardVariants} className="bg-neutral-900 p-6 rounded-xl shadow border-border hover:border-primary transition-all">
-                <h3 className="text-2xl font-semibold text-white mb-4">Open Application</h3>
-                <div className="space-y-4">
-                  <div className="hover:border hover:border-primary p-3 rounded-lg transition-all">
-                    <h4 className="font-semibold text-white text-sm mb-1">Open Application</h4>
-                    <p className="text-neutral-300 text-xs">Have a unique skill set? We're always looking for exceptional talent to join our mission.</p>
-                  </div>
-                </div>
-              </motion.div>
+              
             </motion.div>
 
             {/* Internships Section with Scroll Animation */}
             <motion.div 
               ref={internshipsRef}
               style={{ opacity: internshipsOpacity, y: internshipsY, scale: internshipsScale }}
-              className="mt-12"
+              className="mt-12 bg-transparent"
             >
-              <motion.h3 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="text-2xl font-bold text-white mb-6 text-center"
-              >
-                Internships
-              </motion.h3>
-              <motion.div 
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-10%" }}
-                className="grid grid-cols-1 md:grid-cols-2 gap-8"
-              >
-                <motion.div variants={cardVariants} className="bg-neutral-900 p-6 rounded-xl shadow border-border hover:border-primary transition-all">
-                  <h4 className="text-xl font-semibold text-white mb-4">Forward Deployed Intern</h4>
-                  <p className="text-neutral-300 text-sm">Deploy technology in real defense environments. Learn the intersection of software and national security.</p>
-                </motion.div>
-                <motion.div variants={cardVariants} className="bg-neutral-900 p-6 rounded-xl shadow border-border hover:border-primary transition-all">
-                  <h4 className="text-xl font-semibold text-white mb-4">Software Engineering Intern</h4>
-                  <p className="text-neutral-300 text-sm">Build mission-critical applications. Learn to create software that operators depend on.</p>
-                </motion.div>
-              </motion.div>
+             
+             
             </motion.div>
 
             {/* Don't See Your Role? CTA */}
@@ -202,13 +144,9 @@ const Careers = () => {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="bg-neutral-950 text-center p-8 rounded-xl mt-10 border border-border"
+              className="bg-transparent text-center p-8 rounded-xl mt-10 "
             >
-              <h4 className="text-xl font-semibold text-white mb-2">Not Listed?</h4>
-              <p className="text-neutral-300 mb-4">If you're a world-class builder with defense, IC, or logistics experience — we want you.</p>
-              <a href="mailto:careers@redlaunch.com" className="text-primary underline font-semibold hover:text-primary/80 transition-colors">
-                👉 careers@redlaunch.com
-              </a>
+              
             </motion.div>
           </motion.div>
 
@@ -266,13 +204,6 @@ const Careers = () => {
                 className="inline-block px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-lg shadow hover:bg-primary/90 transition neon-glow"
               >
                 Apply Now
-              </motion.a>
-              <motion.a 
-                variants={cardVariants}
-                href="/contact" 
-                className="inline-block px-8 py-4 bg-card text-foreground font-semibold rounded-lg shadow border border-border hover:bg-accent hover:text-accent-foreground transition"
-              >
-                Contact Us
               </motion.a>
             </motion.div>
           </motion.div>

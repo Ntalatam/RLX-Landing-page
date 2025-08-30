@@ -2,101 +2,33 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-background border-t border-border py-20">
-      <div className="container mx-auto px-4 md:px-20">
-        <div className="grid md:grid-cols-4 gap-12 mb-16">
-          {/* Company Info */}
-          <div className="md:col-span-2">
-            <Link to="/" className="flex items-center space-x-3 group mb-8">
-              <img src="/images/rlx-logo.png" alt="Red Launch Logo" className="w-12 h-12 object-contain group-hover:neon-glow transition-all duration-300" />
-              <span className="text-2xl font-extrabold text-foreground group-hover:text-primary transition-colors duration-300">
-                Red Launch Technologies
-              </span>
-            </Link>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl leading-relaxed">
-              Redefining national supply chain security through real-time AI-powered risk intelligence and visualization tools for defense, aerospace, and critical manufacturing sectors.
-            </p>
-            <div className="flex space-x-6">
-              <a href="https://www.linkedin.com/company/red-launch/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg">
-                LinkedIn
-              </a>
-            </div>
-          </div>
-
-          {/* Media */}
-          <div>
-            <h3 className="text-xl font-extrabold text-foreground mb-6">Media</h3>
-            <ul className="space-y-4">
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg">
-                  Press Releases
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg">
-                  Media Coverage
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg">
-                  News
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h3 className="text-xl font-extrabold text-foreground mb-6">Company</h3>
-            <ul className="space-y-4">
-
-              <li>
-                <Link to="/mission" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg">
-                  Mission
-                </Link>
-              </li>
-              <li>
-                <Link to="/founding-team" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg">
-                  Founding Team
-                </Link>
-              </li>
-              <li>
-                <Link to="/careers" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg">
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
+    <footer className="bg-transparent border-t border-border py-6">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
+        {/* Left: Logo and copyright */}
+        <div className="flex items-center space-x-3 mb-4 md:mb-0">
+          <img
+            src="/images/red-launch-logo-FINAL-2.png"
+            alt="Red Launch Logo"
+            className="w-8 h-8 object-contain"
+          />
+          <span className="text-muted-foreground text-sm">
+            © 2025 Red Launch Technologies. All rights reserved.
+          </span>
         </div>
-
-        {/* Bottom Section */}
-        <div className="border-t border-border pt-12">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-            <div className="text-muted-foreground text-lg">
-              © 2025 Red Launch Technologies. All rights reserved.
-            </div>
-            <div className="flex space-x-8">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg">
-                Terms of Service
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-lg">
-                Cookie Policy
-              </a>
-            </div>
-          </div>
+        {/* Right: Social icons */}
+        <div className="flex items-center space-x-6">
+          <a
+            href="https://www.linkedin.com/company/red-launch/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary transition-colors duration-200"
+            aria-label="LinkedIn"
+          >
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.59v5.74z"/>
+            </svg>
+          </a>
+          {/* Add more icons as needed */}
         </div>
       </div>
     </footer>

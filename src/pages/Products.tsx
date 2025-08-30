@@ -33,6 +33,18 @@ const Products = () => {
     offset: ["start end", "end start"]
   });
 
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Handler to loop only the first 33 seconds
+  const handleTimeUpdate = () => {
+    const video = videoRef.current;
+    if (video && video.currentTime >= 32) {
+      video.currentTime = 0;
+      video.play();
+    }
+  };
+
+
   // Transform values for animations
   const headerOpacity = useTransform(headerProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
   const headerY = useTransform(headerProgress, [0, 0.2, 0.8, 1], [100, 0, 0, -100]);
@@ -284,6 +296,35 @@ const Products = () => {
               </motion.div>
             </motion.div>
           </motion.div>
+
+          {/*<section className="mb-20">
+  <div className="container mx-auto px-4 md:px-20">
+    <h3 className="text-2xl md:text-4xl font-extrabold text-foreground text-center mb-10">
+      Platform in Action
+    </h3>
+     <div className="flex flex-col items-center justify-center">
+            <div className="bg-background/80 rounded-2xl shadow-2xl border border-border overflow-hidden mb-4 w-full max-w-3xl">
+              <video
+                ref={videoRef}
+                src="/images/video.mov"
+                controls
+                autoPlay
+                loop={false} // Disable native loop
+                muted
+                playsInline
+                className="w-full h-auto object-contain"
+                preload="auto"
+                poster="/images/risks.png"
+                onTimeUpdate={handleTimeUpdate}
+              />
+            </div>
+  <p className="text-base text-muted-foreground text-center mt-2">
+    <span className="font-semibold text-primary">Platform Demo</span><br />
+    See the platform in action: real-time risk visualization and predictive inventory management.
+  </p>
+</div>
+  </div>
+</section>*/}
 
           {/* Platform Capabilities with Scroll Animation */}
           <motion.div 

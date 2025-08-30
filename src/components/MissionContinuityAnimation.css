@@ -1,0 +1,211 @@
+.realtime-visibility {
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rtv-background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.7);
+  border-radius: 24px;
+  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.18);
+  border: 2px solid #ff3c3c22;
+  overflow: visible;
+}
+
+.rtv-center-hub {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 80px;
+  height: 80px;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hub-icon {
+  font-size: 2.2rem;
+  margin-bottom: 2px;
+}
+
+.hub-label {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.hub-pulse {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 90px;
+  height: 90px;
+  background: rgba(255, 60, 60, 0.15);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: hubPulse 2.5s infinite;
+  z-index: 1;
+}
+
+@keyframes hubPulse {
+  0% { opacity: 0.7; transform: translate(-50%, -50%) scale(1);}
+  70% { opacity: 0; transform: translate(-50%, -50%) scale(1.7);}
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.7);}
+}
+
+.supply-line {
+  position: absolute;
+  height: 4px;
+  background: linear-gradient(90deg, #ff3c3c 60%, #fff0 100%);
+  border-radius: 2px;
+  opacity: 0.7;
+  z-index: 1;
+  transition: background 0.3s;
+  overflow: visible;
+}
+
+.supply-line.delayed {
+  background: linear-gradient(90deg, #ffb13c 60%, #fff0 100%);
+}
+
+.supply-line.rerouted {
+  background: linear-gradient(90deg, #3cafff 60%, #fff0 100%);
+}
+
+.supply-line.flowing {
+  box-shadow: 0 0 8px 2px #ff3c3c55;
+}
+
+.supply-dot {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  background: #ff3c3c;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 8px 2px #ff3c3c99;
+  animation: moveDot 2s linear infinite;
+}
+
+@keyframes moveDot {
+  0% { left: 0; }
+  100% { left: calc(100% - 16px); }
+}
+
+.supply-node {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background: #23242a;
+  border-radius: 50%;
+  box-shadow: 0 2px 12px 0 #0004;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #444;
+  color: #fff;
+  z-index: 3;
+  transition: border 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  user-select: none;
+}
+
+.supply-node.normal {
+  border-color: #3cff7a;
+}
+
+.supply-node.delayed {
+  border-color: #ffb13c;
+  animation: delayedPulse 1.5s infinite;
+}
+
+.supply-node.rerouted {
+  border-color: #3cafff;
+  animation: reroutedPulse 1.5s infinite;
+}
+
+.supply-node.active {
+  box-shadow: 0 0 16px 4px #ff3c3c88;
+  border-color: #ff3c3c;
+}
+
+@keyframes delayedPulse {
+  0%, 100% { box-shadow: 0 0 0 0 #ffb13c55; }
+  50% { box-shadow: 0 0 16px 6px #ffb13c55; }
+}
+
+@keyframes reroutedPulse {
+  0%, 100% { box-shadow: 0 0 0 0 #3cafff55; }
+  50% { box-shadow: 0 0 16px 6px #3cafff55; }
+}
+
+.node-icon {
+  font-size: 2rem;
+  margin-bottom: 2px;
+}
+
+.node-label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  margin-top: 2px;
+  text-shadow: 0 1px 4px #0008;
+}
+
+.operation-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  width: 80%;
+  z-index: 10;
+  text-align: center;
+}
+
+.operation-text {
+  color: #b2ffb2;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+  text-shadow: 0 1px 4px #0008;
+}
+
+.operation-bar {
+  width: 100%;
+  height: 18px;
+  background: #181818;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1.5px solid #3cff7a;
+  margin: 0 auto;
+  box-shadow: 0 1px 6px #0004;
+}
+
+.operation-progress {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #3cff7a 60%, #fff0 100%);
+  animation: progressBar 3s linear infinite;
+}
+
+@keyframes progressBar {
+  0% { width: 0; }
+  100% { width: 100%; }
+}

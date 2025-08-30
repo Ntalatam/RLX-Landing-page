@@ -8,13 +8,13 @@ const founders = [
     name: "Tyler Festa",
     role: "Chief Executive Officer",
     linkedin: "https://www.linkedin.com/in/tylerfesta/", // Placeholder, update as needed
-    image: "https://media.licdn.com/dms/image/v2/C5603AQFkvYO2TInayA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1611678405219?e=1755734400&v=beta&t=OLI_HzJLNud6-9lg_x0CDUpRy2TArVtS00GX36qJGUk"
+    image: "images/tyler.jpg"
   },
   {
     name: "Jesus Badillo",
     role: "Chief Technology Officer",
     linkedin: "https://www.linkedin.com/in/jesus-badillo/",
-    image: "https://media.licdn.com/dms/image/v2/C4E03AQFTg5mCXTh6VQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1631651190811?e=1755734400&v=beta&t=Fyci72jWW2aYL2677G3EVXBJkVOmJPytHpcIyCL51oA"
+    image: "images/jesus.jpg"
   }
 ];
 
