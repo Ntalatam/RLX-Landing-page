@@ -1,8 +1,25 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Shield, Globe, Map, TrendingUp, AlertTriangle, Clock, Users, Zap } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Shield,
+  Globe,
+  Map,
+  TrendingUp,
+  AlertTriangle,
+  Clock,
+  Settings,
+  Users,
+  Zap,
+  Route,
+} from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
@@ -15,22 +32,22 @@ const Products = () => {
   // Scroll progress for each section
   const { scrollYProgress: headerProgress } = useScroll({
     target: headerRef,
-    offset: ["start end", "end start"]
+    offset: ["start end", "end start"],
   });
 
   const { scrollYProgress: featuresProgress } = useScroll({
     target: featuresRef,
-    offset: ["start end", "end start"]
+    offset: ["start end", "end start"],
   });
 
   const { scrollYProgress: technologyProgress } = useScroll({
     target: technologyRef,
-    offset: ["start end", "end start"]
+    offset: ["start end", "end start"],
   });
 
   const { scrollYProgress: capabilitiesProgress } = useScroll({
     target: capabilitiesRef,
-    offset: ["start end", "end start"]
+    offset: ["start end", "end start"],
   });
 
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -44,23 +61,70 @@ const Products = () => {
     }
   };
 
-
   // Transform values for animations
-  const headerOpacity = useTransform(headerProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const headerY = useTransform(headerProgress, [0, 0.2, 0.8, 1], [100, 0, 0, -100]);
-  const headerScale = useTransform(headerProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
+  const headerOpacity = useTransform(
+    headerProgress,
+    [0, 0.2, 0.8, 1],
+    [0, 1, 1, 0]
+  );
+  const headerY = useTransform(
+    headerProgress,
+    [0, 0.2, 0.8, 1],
+    [100, 0, 0, -100]
+  );
+  const headerScale = useTransform(
+    headerProgress,
+    [0, 0.2, 0.8, 1],
+    [0.8, 1, 1, 0.8]
+  );
 
-  const featuresOpacity = useTransform(featuresProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const featuresY = useTransform(featuresProgress, [0, 0.2, 0.8, 1], [100, 0, 0, -100]);
-  const featuresScale = useTransform(featuresProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
+  const featuresOpacity = useTransform(
+    featuresProgress,
+    [0, 0.2, 0.8, 1],
+    [0, 1, 1, 0]
+  );
+  const featuresY = useTransform(
+    featuresProgress,
+    [0, 0.2, 0.8, 1],
+    [100, 0, 0, -100]
+  );
+  const featuresScale = useTransform(
+    featuresProgress,
+    [0, 0.2, 0.8, 1],
+    [0.8, 1, 1, 0.8]
+  );
 
-  const technologyOpacity = useTransform(technologyProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const technologyY = useTransform(technologyProgress, [0, 0.2, 0.8, 1], [100, 0, 0, -100]);
-  const technologyScale = useTransform(technologyProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
+  const technologyOpacity = useTransform(
+    technologyProgress,
+    [0, 0.2, 0.8, 1],
+    [0, 1, 1, 0]
+  );
+  const technologyY = useTransform(
+    technologyProgress,
+    [0, 0.2, 0.8, 1],
+    [100, 0, 0, -100]
+  );
+  const technologyScale = useTransform(
+    technologyProgress,
+    [0, 0.2, 0.8, 1],
+    [0.8, 1, 1, 0.8]
+  );
 
-  const capabilitiesOpacity = useTransform(capabilitiesProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const capabilitiesY = useTransform(capabilitiesProgress, [0, 0.2, 0.8, 1], [100, 0, 0, -100]);
-  const capabilitiesScale = useTransform(capabilitiesProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
+  const capabilitiesOpacity = useTransform(
+    capabilitiesProgress,
+    [0, 0.2, 0.8, 1],
+    [0, 1, 1, 0]
+  );
+  const capabilitiesY = useTransform(
+    capabilitiesProgress,
+    [0, 0.2, 0.8, 1],
+    [100, 0, 0, -100]
+  );
+  const capabilitiesScale = useTransform(
+    capabilitiesProgress,
+    [0, 0.2, 0.8, 1],
+    [0.8, 1, 1, 0.8]
+  );
 
   // Animation variants
   const containerVariants = {
@@ -70,110 +134,147 @@ const Products = () => {
       transition: {
         staggerChildren: 0.2,
         delayChildren: 0.1,
-      }
-    }
+      },
+    },
   };
 
   const cardVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: 50, 
-      scale: 0.95 
+    hidden: {
+      opacity: 0,
+      y: 50,
+      scale: 0.95,
     },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      scale: 1
-    }
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+    },
   };
 
   const features = [
     {
       icon: Shield,
       title: "Supplier Risk Assessment",
-      description: "Real-time monitoring and scoring of supplier vulnerabilities with automated alerts and compliance tracking.",
-      benefits: ["Live risk scoring", "Automated alerts", "Compliance tracking", "Vendor vetting"]
+      description:
+        "Continuously assess supplier performance and risks through real-time monitoring",
+      //  data-driven scoring, and automated compliance management.
+      benefits: [
+        "Dynamic Risk Scoring",
+        "Automated Compliance Tracking",
+        "Proactive Alerts",
+        "Vendor Vetting",
+      ],
     },
     {
       icon: Globe,
       title: "Global Tracker",
-      description: "Interactive geographical mapping with real-time risk overlays and disruption visualization.",
-      benefits: ["Real-time mapping", "Risk overlays", "Route planning", "Emergency response"]
+      description:
+        "Tactical Mapping Intelligence for monitoring risks, disruptions, and routes worldwide.",
+      benefits: [
+        "Real-time Interactive Maps",
+        "Risk and Disruption Overlays",
+        "Smart Route Optimization",
+        "Rapid Emergency Coordination",
+      ],
     },
     {
       icon: Map,
-      title: "Intelligence Map",
-      description: "Multi-tier supply chain visualization with dependency mapping and impact analysis.",
-      benefits: ["Tier-N visibility", "Dependency mapping", "Impact analysis", "Bottleneck detection"]
-    }
+      title: "Operational Intelligence Map",
+      description:
+        "Holistic view of interconnected logistics networks with predictive failure points.",
+      benefits: [
+        "Multi-tier Visibility",
+        "Dependency Mapping",
+        "Impact Analysis",
+        "Bottleneck Detection",
+      ],
+    },
   ];
 
   const capabilities = [
     {
       icon: TrendingUp,
       title: "Real-Time Analytics",
-      description: "Live data processing and risk scoring with instant alerts and notifications."
+      description:
+        "Live data processing and risk scoring with instant alerts and notifications.",
     },
     {
       icon: AlertTriangle,
       title: "Proactive Alerts",
-      description: "Early warning system for potential disruptions and supply chain vulnerabilities."
+      description:
+        "Early warning system for potential disruptions and supply chain vulnerabilities.",
     },
     {
-      icon: Clock,
-      title: "24/7 Monitoring",
-      description: "Continuous surveillance of global supply chains and risk factors."
+      icon: Route,
+      title: "Disruption Adaption",
+      description:
+        "Provide alternative options when supply routes are compromised.",
     },
     {
-      icon: Users,
-      title: "Team Collaboration",
-      description: "Multi-user platform with role-based access and shared dashboards."
+      icon: Settings,
+      title: "Inventory Optimization",
+      description:
+        "Optimization of stock placement and inventory, minimizing logistical strain ",
     },
     {
       icon: Zap,
       title: "Fast Integration",
-      description: "Quick deployment with existing ERP and supply chain management systems."
-    }
+      description:
+        "Quick deployment with existing ERP and supply chain management systems.",
+    },
+    {
+      icon: Users,
+      title: "Team Collaboration",
+      description:
+        "Multi-user platform with role-based access and shared dashboards.",
+    },
   ];
 
   return (
     <div className="min-h-screen">
       <Header />
-      
 
       {/* Technology Overview Section */}
       <section className="pt-32 pb-20">
         <div className="container mx-auto px-4 md:px-20">
           {/* Header with Scroll Animation */}
-          <motion.div 
+          <motion.div
             ref={headerRef}
             style={{ opacity: headerOpacity, y: headerY, scale: headerScale }}
             className="text-center mb-20"
           >
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-8 leading-tight"
             >
-              Platform Technology
+              Delivering Peak Performance in Every Place That Matters
             </motion.h2>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
               className="text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed"
             >
-              Advanced AI-powered supply chain intelligence platform designed for high-stakes industries requiring real-time risk management and operational resilience.
+              A supply chain intelligence platform engineered for high-stakes
+              industries, enhancing logistics at tactical and operational levels
+              with real-time risk management, unified oversight of inventory,
+              personnel, equipment, and distribution, and mission-critical
+              operational resilience.
             </motion.p>
           </motion.div>
 
           {/* Core Features with Stagger Animation */}
-          <motion.div 
+          <motion.div
             ref={featuresRef}
-            style={{ opacity: featuresOpacity, y: featuresY, scale: featuresScale }}
+            style={{
+              opacity: featuresOpacity,
+              y: featuresY,
+              scale: featuresScale,
+            }}
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -197,7 +298,10 @@ const Products = () => {
                   <CardContent className="flex-1 flex flex-col">
                     <ul className="space-y-3 flex-1">
                       {feature.benefits.map((benefit, idx) => (
-                        <li key={idx} className="flex items-center text-muted-foreground text-base">
+                        <li
+                          key={idx}
+                          className="flex items-center text-muted-foreground text-base"
+                        >
                           <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
                           {benefit}
                         </li>
@@ -210,9 +314,13 @@ const Products = () => {
           </motion.div>
 
           {/* Technology Highlight with Scroll Animation */}
-          <motion.div 
+          <motion.div
             ref={technologyRef}
-            style={{ opacity: technologyOpacity, y: technologyY, scale: technologyScale }}
+            style={{
+              opacity: technologyOpacity,
+              y: technologyY,
+              scale: technologyScale,
+            }}
             initial={{ opacity: 0, y: 50, scale: 0.95 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.8 }}
@@ -220,27 +328,29 @@ const Products = () => {
             className="bg-card/80 rounded-2xl p-10 md:p-16 border border-border mb-20 neon-glow"
           >
             <div className="text-center mb-12">
-              <motion.h3 
+              <motion.h3
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
                 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-6"
               >
-                Technology Highlight
+                Optimized for reliability. Refined for speed.
               </motion.h3>
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
                 className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed"
               >
-                Our platform combines advanced machine learning algorithms with real-time data processing to deliver unprecedented visibility into supply chain risks.
+                A real-time engine that continuously integrates and transforms
+                data alongside vendor information, providing unmatched
+                transparency into supply chain vulnerabilities.
               </motion.p>
             </div>
-            
-            <motion.div 
+
+            <motion.div
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
@@ -249,36 +359,35 @@ const Products = () => {
             >
               <motion.div variants={cardVariants}>
                 <h4 className="text-2xl md:text-3xl font-extrabold text-foreground mb-6">
-                  AI-Powered Risk Assessment
+                  Built for No-Signal Environments
                 </h4>
-                <ul className="space-y-4 text-lg text-muted-foreground">
-                  <li className="flex items-start">
-                    <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>Machine learning models trained on millions of supply chain events</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>Real-time data aggregation from 50+ global sources</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>Predictive analytics for early risk detection</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>Automated compliance reporting and documentation</span>
-                  </li>
-                </ul>
+                <span>
+                  Designed for resilience at the edge, the platform locally
+                  stores key logistics data to sustain operations offline. Once
+                  connected, it transmits updates across its network with
+                  mission-aware prioritization to maximize efficiency. user and
+                  mission requirements while conserving bandwidth.
+                </span>
               </motion.div>
-              
+
               <motion.div variants={cardVariants}>
                 <h4 className="text-2xl md:text-3xl font-extrabold text-foreground mb-6">
-                  Advanced Visualization
+                  Scales to the Operation
                 </h4>
-                <ul className="space-y-4 text-lg text-muted-foreground">
+                <span>
+                  Seamlessly transitions between environments: agile and compact
+                  at the edge, enterprise-strong in the cloud
+                </span>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+
+          {/* <ul className="space-y-4 text-lg text-muted-foreground">
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>Interactive 3D mapping of global supply networks</span>
+                    <span>
+                      Interactive 3D mapping of global supply networks
+                    </span>
                   </li>
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
@@ -286,16 +395,15 @@ const Products = () => {
                   </li>
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>Customizable dashboards for different user roles</span>
+                    <span>
+                      Customizable dashboards for different user roles
+                    </span>
                   </li>
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
                     <span>Mobile-responsive design for field operations</span>
                   </li>
-                </ul>
-              </motion.div>
-            </motion.div>
-          </motion.div>
+                </ul> */}
 
           {/*<section className="mb-20">
   <div className="container mx-auto px-4 md:px-20">
@@ -327,21 +435,25 @@ const Products = () => {
 </section>*/}
 
           {/* Platform Capabilities with Scroll Animation */}
-          <motion.div 
+          <motion.div
             ref={capabilitiesRef}
-            style={{ opacity: capabilitiesOpacity, y: capabilitiesY, scale: capabilitiesScale }}
+            style={{
+              opacity: capabilitiesOpacity,
+              y: capabilitiesY,
+              scale: capabilitiesScale,
+            }}
             className="mb-20"
           >
-            <motion.h3 
+            <motion.h3
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground text-center mb-12"
             >
-              Platform Capabilities
+              What the Platform Can Do
             </motion.h3>
-            <motion.div 
+            <motion.div
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
@@ -377,4 +489,4 @@ const Products = () => {
   );
 };
 
-export default Products; 
+export default Products;
