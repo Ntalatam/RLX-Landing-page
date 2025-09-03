@@ -196,9 +196,7 @@ const MissionCont: React.FC = () => {
           <div className="text-[2.3rem] text-[#0a192f]">🛰️</div>
         </motion.div>
       </div>
-      <div className="absolute bottom-5 bg-[rgba(16,24,40,0.7)] px-5 py-2 rounded-full text-[#38bdf8] text-base font-semibold border border-[#38bdf8] shadow-lg">
-        Real-Time Visibility & Situational Awareness
-      </div>
+     
     </div>
   );
 };

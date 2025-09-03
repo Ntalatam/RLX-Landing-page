@@ -152,7 +152,32 @@ const Products = () => {
   };
 
   const features = [
+        {
+      icon: Globe,
+      title: "DDIL Compliant",
+      description:
+        "Identifies periods of connectivity and sends data to other nodes in the mesh network, while prioritizing data flow and limiting bandwidth, based on the context of the specific mission",
+      benefits: [
+        "Offline Architecture",
+        "Tactical Data Capture",
+        "Last known route, inventory, and vehicle data",
+        "Minimal Detection",
+      ],
+    },
+  
     {
+      icon: Map,
+      title: "Predictive Logistics",
+      description:
+        "Enabling real-time logistics planning and execution in adversarial environments",
+      benefits: [
+        "Tactical, Operational, and Strategic Levels",
+        "Maintenance & Sustainment Optimization",
+        " Live Operational Visibility",
+        "Real-Time Situational Awareness",
+      ],
+    },
+      {
       icon: Shield,
       title: "Supplier Risk Assessment",
       description:
@@ -165,48 +190,24 @@ const Products = () => {
         "Vendor Vetting",
       ],
     },
-    {
-      icon: Globe,
-      title: "Global Tracker",
-      description:
-        "Tactical Mapping Intelligence for monitoring risks, disruptions, and routes worldwide.",
-      benefits: [
-        "Real-time Interactive Maps",
-        "Risk and Disruption Overlays",
-        "Smart Route Optimization",
-        "Rapid Emergency Coordination",
-      ],
-    },
-    {
-      icon: Map,
-      title: "Operational Intelligence Map",
-      description:
-        "Holistic view of interconnected logistics networks with predictive failure points.",
-      benefits: [
-        "Multi-tier Visibility",
-        "Dependency Mapping",
-        "Impact Analysis",
-        "Bottleneck Detection",
-      ],
-    },
   ];
 
   const capabilities = [
     {
       icon: TrendingUp,
-      title: "Real-Time Analytics",
+      title: "Predictive Analytics",
       description:
         "Live data processing and risk scoring with instant alerts and notifications.",
     },
     {
       icon: AlertTriangle,
-      title: "Proactive Alerts",
+      title: "Real-Time Alerts",
       description:
         "Early warning system for potential disruptions and supply chain vulnerabilities.",
     },
     {
       icon: Route,
-      title: "Disruption Adaption",
+      title: "Proactive Disruption Adaptation",
       description:
         "Provide alternative options when supply routes are compromised.",
     },
@@ -218,13 +219,13 @@ const Products = () => {
     },
     {
       icon: Zap,
-      title: "Fast Integration",
+      title: "Seamless Integration",
       description:
         "Quick deployment with existing ERP and supply chain management systems.",
     },
     {
       icon: Users,
-      title: "Team Collaboration",
+      title: "Streamlined Communication",
       description:
         "Multi-user platform with role-based access and shared dashboards.",
     },
@@ -248,9 +249,9 @@ const Products = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-8 leading-tight"
+              className="text-4xl md:text-6xl lg:text-6xl font-extrabold text-foreground mb-8 leading-tight"
             >
-              Delivering Peak Performance in Every Place That Matters
+              Built to Terrify the Enemy in Every Domain
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 30 }}
@@ -259,8 +260,7 @@ const Products = () => {
               viewport={{ once: true }}
               className="text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed"
             >
-              A supply chain intelligence platform engineered for high-stakes
-              industries, enhancing logistics at tactical and operational levels
+              A supplier intelligence platform engineered for contested settings, enhancing logistics at tactical and operational levels
               with real-time risk management, unified oversight of inventory,
               personnel, equipment, and distribution, and mission-critical
               operational resilience.
@@ -345,8 +345,8 @@ const Products = () => {
                 className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed"
               >
                 A real-time engine that continuously integrates and transforms
-                data alongside vendor information, providing unmatched
-                transparency into supply chain vulnerabilities.
+                data captured at the tactical echelon alongside vendor information, providing unmatched
+                transparency  into contested logistics environments.
               </motion.p>
             </div>
 
@@ -358,8 +358,8 @@ const Products = () => {
               className="grid md:grid-cols-2 gap-12"
             >
               <motion.div variants={cardVariants}>
-                <h4 className="text-2xl md:text-3xl font-extrabold text-foreground mb-6">
-                  Built for No-Signal Environments
+                <h4 className="text-2xl md:text-2xl font-extrabold text-foreground mb-6">
+                  Offline-Compatible Architecture
                 </h4>
                 <span>
                   Designed for resilience at the edge, the platform locally
@@ -371,12 +371,12 @@ const Products = () => {
               </motion.div>
 
               <motion.div variants={cardVariants}>
-                <h4 className="text-2xl md:text-3xl font-extrabold text-foreground mb-6">
-                  Scales to the Operation
+                <h4 className="text-2xl md:text-2xl font-extrabold text-foreground mb-6">
+                  Mission-Driven Integration and Scalability
                 </h4>
                 <span>
                   Seamlessly transitions between environments: agile and compact
-                  at the edge, enterprise-strong in the cloud
+                  at the tactical edge, enterprise-level resilience at the operational and strategic levels.
                 </span>
               </motion.div>
             </motion.div>

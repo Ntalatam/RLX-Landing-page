@@ -162,7 +162,7 @@ const Careers = () => {
           >
             <h2 className="text-2xl font-bold text-white mb-6 text-center">How We Hire</h2>
             <p className="text-lg text-neutral-300 text-center max-w-3xl mx-auto">
-              We look for builders who think clearly, move fast, and build with purpose. 
+              We look for hackers, artists, and builders who think clearly, move fast, and build with purpose. 
               Technical excellence matters. Mission alignment matters more.
             </p>
           </motion.div>

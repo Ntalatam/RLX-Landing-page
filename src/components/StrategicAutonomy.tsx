@@ -38,7 +38,7 @@ const StrategicAutonomy: React.FC = () => {
   };
 
   useEffect(() => {
-    const connectionStates = ['normal', 'disrupted', 'degraded', 'intermittent', 'lowBandwidth'];
+    const connectionStates = ['normal', 'disrupted', 'degraded', 'intermittent', 'low-Bandwidth'];
     let counter = 0;
 
     const interval = setInterval(() => {
