@@ -7,12 +7,12 @@ const Footer = () => {
         {/* Left: Logo and copyright */}
         <div className="flex items-center space-x-3 mb-4 md:mb-0">
           <img
-            src="/images/red-launch-logo-FINAL-2.png"
+            src="/images/IMG_6931.jpeg"
             alt="Red Launch Logo"
             className="w-8 h-8 object-contain"
           />
           <span className="text-muted-foreground text-sm">
-            © 2025 Red Launch Technologies. All rights reserved.
+            © 2025 Maverick Lab Technologies. All rights reserved.
           </span>
         </div>
         {/* Right: Social icons */}

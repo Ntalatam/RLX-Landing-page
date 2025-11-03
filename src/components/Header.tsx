@@ -28,7 +28,7 @@ const Header = () => {
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="bg-neutral-900 rounded-full p-2 shadow-lg flex items-center justify-center">
               <img
-                src="/images/red-launch-logo-FINAL-2.png"
+                src="/images/IMG_6931.jpeg"
                 alt="Red Launch Logo"
                 className="w-16 h-16 object-contain group-hover:neon-glow transition-all duration-300"
                 style={{
@@ -38,7 +38,7 @@ const Header = () => {
               />
             </div>
             <span className="text-2xl font-extrabold text-foreground group-hover:text-primary transition-colors duration-300">
-              Red Launch
+              Maverick
             </span>
           </Link>
 
