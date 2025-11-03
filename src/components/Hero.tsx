@@ -127,7 +127,7 @@ Our Supplier Intelligence platform for Defense enables Real-Time optimization of
             viewport={{ once: true }}
             className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-8 text-center leading-tight"
           >
-            What Is Red Launch?
+            What Is Maverick Labs?
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 30 }}
@@ -188,7 +188,7 @@ Our Supplier Intelligence platform for Defense enables Real-Time optimization of
       <section id="cta" className="py-32 border-t border-border">
         <div className="container mx-auto px-4 md:px-20 text-center">
           <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-4">
-            Secure the Mission. Start with Red Launch.
+            Secure the Mission. Start with Maverick Labs.
           </h2>
           
           

@@ -37,7 +37,7 @@ const MissionPage = () => {
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                About Red Launch Technologies
+                About Maverick Labs
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 We're pioneering the future of supply chain intelligence, empowering organizations 
@@ -51,7 +51,7 @@ const MissionPage = () => {
                   Our Story
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Red Launch Technologies was founded on the belief that supply chain visibility 
+                  Maverick Labs was founded on the belief that supply chain visibility 
                   shouldn't be a luxury—it should be a strategic advantage accessible to every organization 
                   that values operational resilience.
                 </p>

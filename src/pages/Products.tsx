@@ -251,7 +251,7 @@ const Products = () => {
               viewport={{ once: true }}
               className="text-4xl md:text-6xl lg:text-6xl font-extrabold text-foreground mb-8 leading-tight"
             >
-              Built to Terrify the Enemy in Every Domain
+              Built to Dominate
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 30 }}

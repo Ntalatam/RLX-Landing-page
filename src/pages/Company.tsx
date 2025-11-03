@@ -104,7 +104,7 @@ const Company = () => {
             viewport={{ once: true }}
             className="text-5xl md:text-6xl font-bold text-foreground mb-8 text-center"
           >
-            About Red Launch Technologies
+            About Maverick Labs
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 30 }}
