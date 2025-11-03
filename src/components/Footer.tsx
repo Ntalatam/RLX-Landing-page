@@ -12,7 +12,7 @@ const Footer = () => {
             className="w-8 h-8 object-contain"
           />
           <span className="text-muted-foreground text-sm">
-            © 2025 Maverick Lab Technologies. All rights reserved.
+            © 2025 Maverick Lab. All rights reserved.
           </span>
         </div>
         {/* Right: Social icons */}
